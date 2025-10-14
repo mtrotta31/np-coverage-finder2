@@ -1,0 +1,78 @@
+[
+  {
+    "id": "uuid-1",
+    "firstName": "Ellen",
+    "lastName": "Neylon",
+    "email": "ellen.neylon@gmail.com",
+    "mobile": "(646) 338-5975",
+    "credential": "FNP-BC",
+    "states": [
+      "NV",
+      "NY"
+    ],
+    "personalNPI": "1234567890",
+    "payers": [
+      "Medicare",
+      "Aetna",
+      "UHC",
+      "BCBS"
+    ],
+    "availability": "Weekdays AM",
+    "inNetworkConfirmed": true
+  },
+  {
+    "id": "uuid-2",
+    "firstName": "Sophia",
+    "lastName": "Cabrera",
+    "email": "sdcabrera85@gmail.com",
+    "mobile": "(702) 339-2915",
+    "credential": "APRN-FNP",
+    "states": [
+      "NV"
+    ],
+    "personalNPI": "2345678901",
+    "payers": [
+      "UHC",
+      "Cigna"
+    ],
+    "availability": "Flexible",
+    "inNetworkConfirmed": true
+  },
+  {
+    "id": "uuid-3",
+    "firstName": "Anthony",
+    "lastName": "Opimo",
+    "email": "aopimo@me.com",
+    "mobile": "(702) 849-2504",
+    "credential": "AGACNP-BC",
+    "states": [
+      "NV"
+    ],
+    "personalNPI": "3456789012",
+    "payers": [
+      "Medicare",
+      "BCBS"
+    ],
+    "availability": "Weekdays PM",
+    "inNetworkConfirmed": true
+  },
+  {
+    "id": "uuid-4",
+    "firstName": "David",
+    "lastName": "Preston",
+    "email": "davidprestonarnp@gmail.com",
+    "mobile": "(727) 804-3360",
+    "credential": "NP-C",
+    "states": [
+      "FL"
+    ],
+    "personalNPI": "4567890123",
+    "payers": [
+      "Medicare",
+      "Aetna",
+      "Cigna"
+    ],
+    "availability": "Mid-day",
+    "inNetworkConfirmed": true
+  }
+]
