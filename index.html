@@ -2,13 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>MedSync NP Roster</title>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
   <script>
     tailwind.config = {
-      theme: { extend: { colors: { primary: '#3b82f6', secondary: '#10b981' } } }
+      theme: {
+        extend: {
+          colors: {
+            primary: '#3b82f6',   /* Tailwind will allow bg-primary, text-primary, ring-primary */
+            secondary: '#10b981'
+          }
+        }
+      }
     }
   </script>
   <style>
@@ -25,7 +33,7 @@
         <div class="flex items-center">
           <div class="flex-shrink-0 flex items-center">
             <i data-feather="user" class="text-primary"></i>
-            <span class="ml-2 text-xl font-bold text-gray-900">NP Ninja</span>
+            <span class="ml-2 text-xl font-bold text-gray-900">MedSync NP Roster</span>
           </div>
           <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
             <a href="index.html" class="border-primary text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
@@ -40,12 +48,12 @@
           </div>
         </div>
         <div class="hidden sm:ml-6 sm:flex sm:items-center">
-          <button class="bg-primary-500 hover:bg-primary text-white px-4 py-2 rounded-md text-sm font-medium">
+          <button class="bg-primary hover:brightness-90 text-white px-4 py-2 rounded-md text-sm font-medium">
             Import CSV
           </button>
         </div>
         <div class="-mr-2 flex items-center sm:hidden">
-          <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500">
+          <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary">
             <i data-feather="menu"></i>
           </button>
         </div>
@@ -58,12 +66,12 @@
     <div class="bg-white shadow rounded-lg overflow-hidden">
       <div class="p-6">
         <h2 class="text-2xl font-bold text-gray-900">Find the Right NP</h2>
-        <p class="mt-1 text-sm text-gray-500">Select a state and payer to find matching nurse practitioners</p>
+        <p class="mt-1 text-sm text-gray-500">Select a state and payer to find matching nurse practitioners.</p>
 
         <div class="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-2">
           <div>
             <label for="state" class="block text-sm font-medium text-gray-700">State</label>
-            <select id="state" name="state" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm rounded-md">
+            <select id="state" name="state" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-md">
               <option value="">Select a state</option>
               <option value="AL">Alabama</option>
               <option value="AK">Alaska</option>
@@ -120,7 +128,7 @@
 
           <div>
             <label for="payer" class="block text-sm font-medium text-gray-700">Payer</label>
-            <select id="payer" name="payer" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm rounded-md">
+            <select id="payer" name="payer" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-md">
               <option value="">Select a payer</option>
               <option value="Medicare">Medicare</option>
               <option value="Aetna">Aetna</option>
@@ -134,28 +142,30 @@
         </div>
 
         <div class="mt-6">
-          <button type="button" class="w-full sm:w-auto inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-primary hover:brightness-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary" aria-label="Find Best NPI">
-  <i data-feather="search" class="mr-2"></i> Find Best NPI
-</button>
+          <!-- ADD ID HERE -->
+          <button id="findBtn" type="button"
+            class="w-full sm:w-auto inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-primary hover:brightness-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+            <i data-feather="search" class="mr-2"></i>
+            Find Best NPI
+          </button>
         </div>
       </div>
 
       <div class="border-t border-gray-200 px-4 py-5 sm:px-6">
         <h3 class="text-lg font-medium text-gray-900">Results</h3>
-        <p class="mt-1 text-sm text-gray-500">Matching nurse practitioners will appear here</p>
+        <p class="mt-1 text-sm text-gray-500">Matching nurse practitioners will appear here.</p>
 
         <div id="emptyState" class="mt-4 bg-gray-50 rounded-lg p-4">
-          <p class="text-center text-gray-500">Select a state and payer to begin your search</p>
+          <p class="text-center text-gray-500">Select a state and payer to begin your search.</p>
         </div>
 
+        <!-- Demo result card -->
         <div class="mt-4 hidden" id="sample-result">
           <div class="bg-white shadow overflow-hidden sm:rounded-lg">
             <div class="px-4 py-5 sm:px-6 bg-gray-50">
               <div class="flex items-center justify-between">
                 <h3 class="text-lg leading-6 font-medium text-gray-900">Dr. Jane Smith</h3>
-                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                  Active
-                </span>
+                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Active</span>
               </div>
               <p class="mt-1 max-w-2xl text-sm text-gray-500">Personal NPI: 1234567890</p>
             </div>
@@ -179,10 +189,10 @@
                 </div>
               </dl>
               <div class="mt-4 flex space-x-3">
-                <button type="button" class="inline-flex items-center px-3 py-2 border border-gray-300 shadow-sm text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
+                <button type="button" class="inline-flex items-center px-3 py-2 border border-gray-300 shadow-sm text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
                   <i data-feather="copy" class="mr-2"></i> Copy NPI
                 </button>
-                <button type="button" class="inline-flex items-center px-3 py-2 border border-gray-300 shadow-sm text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
+                <button type="button" class="inline-flex items-center px-3 py-2 border border-gray-300 shadow-sm text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
                   <i data-feather="mail" class="mr-2"></i> Email Provider
                 </button>
               </div>
@@ -204,17 +214,32 @@
 
   <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
   <script>
-    VANTA.GLOBE({ el:"#vanta-bg", mouseControls:true, touchControls:true, gyroControls:false, minHeight:200, minWidth:200, scale:1, scaleMobile:1, color:"#3b82f6", backgroundColor:"#f8fafc", size:.8 });
+    // Background + icons
+    if (window.VANTA) {
+      VANTA.GLOBE({
+        el:"#vanta-bg", mouseControls:true, touchControls:true, gyroControls:false,
+        minHeight:200, minWidth:200, scale:1, scaleMobile:1, color:"#3b82f6",
+        backgroundColor:"#f8fafc", size:.8
+      });
+    }
     feather.replace();
 
-    document.getElementById('findBtn').addEventListener('click', () => {
-      const state = document.getElementById('state').value;
-      const payer = document.getElementById('payer').value;
+    // Properly bind to the button by ID
+    const findBtn  = document.getElementById('findBtn');
+    const stateEl  = document.getElementById('state');
+    const payerEl  = document.getElementById('payer');
+    const emptyEl  = document.getElementById('emptyState');
+    const demoCard = document.getElementById('sample-result');
+
+    findBtn.addEventListener('click', () => {
+      const state = stateEl.value;
+      const payer = payerEl.value;
       if (state && payer) {
-        document.getElementById('emptyState').classList.add('hidden');
-        document.getElementById('sample-result').classList.remove('hidden');
+        emptyEl.classList.add('hidden');
+        demoCard.classList.remove('hidden');
+        // TODO: replace demo with real lookup against your JSON roster
       } else {
-        alert('Please select both a state and a payer');
+        alert('Please select both a state and a payer.');
       }
     });
   </script>
