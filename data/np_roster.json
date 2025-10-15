@@ -1,6 +1,6 @@
 {
   "rosterVersion": "2025.10.15",
-  "generatedAt": "2025-10-15T02:58:50Z",
+  "generatedAt": "2025-10-15T14:52:50Z",
   "providers": [
     {
       "id": "form-1",
@@ -25,10 +25,32 @@
       ],
       "availability": "Weekdays AM;Weekdays PM;Weekends (as needed)",
       "inNetworkConfirmed": true,
-      "lastUpdated": "2025-10-15T02:58:50Z"
+      "lastUpdated": "2025-10-15T14:52:50Z"
     },
     {
       "id": "form-2",
+      "firstName": "Oma",
+      "lastName": "Ramsubhag",
+      "email": "amyramsubhag@gmail.com",
+      "mobile": "(561) 802-8312",
+      "states": [
+        "PA"
+      ],
+      "personalNPI": "1659875615",
+      "payers": [
+        "Aetna",
+        "BCBS",
+        "Humana",
+        "Medicaid",
+        "Medicare",
+        "UHC"
+      ],
+      "availability": "Weekdays PM;Weekdays AM;Weekends (as needed)",
+      "inNetworkConfirmed": true,
+      "lastUpdated": "2025-10-15T14:52:50Z"
+    },
+    {
+      "id": "form-3",
       "firstName": "Linda",
       "lastName": "Thomas",
       "email": "llgilbert2@crimson.ua.edu",
@@ -46,10 +68,10 @@
       ],
       "availability": "Weekdays PM;Weekends (as needed)",
       "inNetworkConfirmed": true,
-      "lastUpdated": "2025-10-15T02:58:50Z"
+      "lastUpdated": "2025-10-15T14:52:50Z"
     },
     {
-      "id": "form-3",
+      "id": "form-4",
       "firstName": "Gwendolynn",
       "lastName": "Harris-Cocroft",
       "email": "gwencocroft@outlook.com",
@@ -70,10 +92,10 @@
       ],
       "availability": "Weekdays PM;Weekends (as needed)",
       "inNetworkConfirmed": true,
-      "lastUpdated": "2025-10-15T02:58:50Z"
+      "lastUpdated": "2025-10-15T14:52:50Z"
     },
     {
-      "id": "form-4",
+      "id": "form-5",
       "firstName": "Sarena",
       "lastName": "Sloot",
       "email": "sarena_sloot@wsu.edu",
@@ -102,10 +124,10 @@
       ],
       "availability": "Weekdays AM;Weekdays PM;Weekends (as needed)",
       "inNetworkConfirmed": true,
-      "lastUpdated": "2025-10-15T02:58:50Z"
+      "lastUpdated": "2025-10-15T14:52:50Z"
     },
     {
-      "id": "form-5",
+      "id": "form-6",
       "firstName": "Manda",
       "lastName": "Wetzel",
       "email": "wetzelmanda@gmail.com",
@@ -124,10 +146,10 @@
       ],
       "availability": "Weekdays AM;Weekends (as needed)",
       "inNetworkConfirmed": true,
-      "lastUpdated": "2025-10-15T02:58:50Z"
+      "lastUpdated": "2025-10-15T14:52:50Z"
     },
     {
-      "id": "form-6",
+      "id": "form-7",
       "firstName": "David",
       "lastName": "Preston",
       "email": "davidprestonarnp@gmail.com",
@@ -143,10 +165,10 @@
       ],
       "availability": "Weekdays AM;Weekdays PM;Weekends (as needed)",
       "inNetworkConfirmed": true,
-      "lastUpdated": "2025-10-15T02:58:50Z"
+      "lastUpdated": "2025-10-15T14:52:50Z"
     },
     {
-      "id": "form-7",
+      "id": "form-8",
       "firstName": "Leekieshia",
       "lastName": "Grimsley",
       "email": "ldfrankl85@gmail.com",
@@ -167,10 +189,10 @@
       ],
       "availability": "Weekdays AM;Weekends (as needed);Weekdays PM",
       "inNetworkConfirmed": true,
-      "lastUpdated": "2025-10-15T02:58:50Z"
+      "lastUpdated": "2025-10-15T14:52:50Z"
     },
     {
-      "id": "form-8",
+      "id": "form-9",
       "firstName": "Deidra",
       "lastName": "Thompson",
       "email": "deidranp@gmail.com",
@@ -196,10 +218,10 @@
       ],
       "availability": "Weekdays AM;Weekdays PM;Weekends (as needed)",
       "inNetworkConfirmed": true,
-      "lastUpdated": "2025-10-15T02:58:50Z"
+      "lastUpdated": "2025-10-15T14:52:50Z"
     },
     {
-      "id": "form-9",
+      "id": "form-10",
       "firstName": "Rebecca",
       "lastName": "Scarpa",
       "email": "scarpa.becky@gmail.com",
@@ -220,10 +242,10 @@
       ],
       "availability": "Weekends (as needed);Weekdays AM;Weekdays PM",
       "inNetworkConfirmed": true,
-      "lastUpdated": "2025-10-15T02:58:50Z"
+      "lastUpdated": "2025-10-15T14:52:50Z"
     },
     {
-      "id": "form-10",
+      "id": "form-11",
       "firstName": "Amy",
       "lastName": "Coggin",
       "email": "alcoggin@gmail.com",
@@ -238,10 +260,10 @@
       ],
       "availability": "Weekdays PM;Weekends (as needed)",
       "inNetworkConfirmed": true,
-      "lastUpdated": "2025-10-15T02:58:50Z"
+      "lastUpdated": "2025-10-15T14:52:50Z"
     },
     {
-      "id": "form-11",
+      "id": "form-12",
       "firstName": "Katrina",
       "lastName": "Gallivan",
       "email": "knormanaprn@gmail.com",
@@ -258,10 +280,10 @@
       ],
       "availability": "Weekdays PM;Weekends (as needed)",
       "inNetworkConfirmed": true,
-      "lastUpdated": "2025-10-15T02:58:50Z"
+      "lastUpdated": "2025-10-15T14:52:50Z"
     },
     {
-      "id": "form-12",
+      "id": "form-13",
       "firstName": "Mary Angela (Angie)",
       "lastName": "Eaton",
       "email": "Aeaton1380@gmail.com",
@@ -283,10 +305,10 @@
       ],
       "availability": "Weekdays PM;Weekends (as needed);Weekdays AM",
       "inNetworkConfirmed": true,
-      "lastUpdated": "2025-10-15T02:58:50Z"
+      "lastUpdated": "2025-10-15T14:52:50Z"
     },
     {
-      "id": "form-13",
+      "id": "form-14",
       "firstName": "Regina \"Gina\"",
       "lastName": "DiBello",
       "email": "ginadibello@yahoo.com",
@@ -306,10 +328,10 @@
       ],
       "availability": "Weekdays AM;Weekdays PM;Weekends (as needed)",
       "inNetworkConfirmed": true,
-      "lastUpdated": "2025-10-15T02:58:50Z"
+      "lastUpdated": "2025-10-15T14:52:50Z"
     },
     {
-      "id": "form-14",
+      "id": "form-15",
       "firstName": "Juliane",
       "lastName": "Johnson",
       "email": "codyjohnson976@gmail.com",
@@ -330,10 +352,10 @@
       ],
       "availability": "Weekdays PM;Weekends (as needed)",
       "inNetworkConfirmed": true,
-      "lastUpdated": "2025-10-15T02:58:50Z"
+      "lastUpdated": "2025-10-15T14:52:50Z"
     },
     {
-      "id": "form-15",
+      "id": "form-16",
       "firstName": "Kimberly",
       "lastName": "Sprouse",
       "email": "Kim_sprouse70@yahoo.com",
@@ -351,10 +373,10 @@
       ],
       "availability": "Weekdays AM",
       "inNetworkConfirmed": true,
-      "lastUpdated": "2025-10-15T02:58:50Z"
+      "lastUpdated": "2025-10-15T14:52:50Z"
     },
     {
-      "id": "form-16",
+      "id": "form-17",
       "firstName": "Dominique",
       "lastName": "Pinilla",
       "email": "dominique.pinilla@gmail.com",
@@ -398,10 +420,10 @@
       ],
       "availability": "Weekdays PM;Weekends (as needed)",
       "inNetworkConfirmed": true,
-      "lastUpdated": "2025-10-15T02:58:50Z"
+      "lastUpdated": "2025-10-15T14:52:50Z"
     },
     {
-      "id": "form-17",
+      "id": "form-18",
       "firstName": "Brenda",
       "lastName": "Schell",
       "email": "bschellrn@gmail.com",
@@ -418,7 +440,127 @@
       ],
       "availability": "Weekends (as needed);Weekdays PM",
       "inNetworkConfirmed": true,
-      "lastUpdated": "2025-10-15T02:58:50Z"
+      "lastUpdated": "2025-10-15T14:52:50Z"
+    },
+    {
+      "id": "form-19",
+      "firstName": "Lisa",
+      "lastName": "Moreno",
+      "email": "lisamoreno702@yahoo.com",
+      "mobile": "(702) 336-8420",
+      "states": [
+        "CA",
+        "NV"
+      ],
+      "personalNPI": "1194262519",
+      "payers": [
+        "Aetna",
+        "BCBS",
+        "Medicaid",
+        "Medicare",
+        "UHC"
+      ],
+      "availability": "Weekends (as needed);Weekdays PM",
+      "inNetworkConfirmed": true,
+      "lastUpdated": "2025-10-15T14:52:50Z"
+    },
+    {
+      "id": "form-20",
+      "firstName": "Clarissa",
+      "lastName": "David",
+      "email": "Clarissadavidnp@gmail.com",
+      "mobile": "(310) 938-1191",
+      "states": [
+        "CA"
+      ],
+      "personalNPI": "1447970678",
+      "payers": [
+        "Aetna",
+        "BCBS",
+        "Cigna",
+        "Humana",
+        "Medicaid",
+        "Medicare",
+        "TRICARE",
+        "UHC"
+      ],
+      "availability": "Weekdays PM;Weekends (as needed)",
+      "inNetworkConfirmed": true,
+      "lastUpdated": "2025-10-15T14:52:50Z"
+    },
+    {
+      "id": "form-21",
+      "firstName": "Michelle",
+      "lastName": "Osborne",
+      "email": "arnp820@gmail.com",
+      "mobile": "(270) 314-3668",
+      "states": [
+        "FL",
+        "IL",
+        "KY",
+        "NY",
+        "TX"
+      ],
+      "personalNPI": "1962695593",
+      "payers": [
+        "Aetna",
+        "BCBS",
+        "Cigna",
+        "Humana",
+        "Medicaid",
+        "Medicare",
+        "UHC"
+      ],
+      "availability": "Weekdays PM;Weekends (as needed);Weekdays AM",
+      "inNetworkConfirmed": true,
+      "lastUpdated": "2025-10-15T14:52:50Z"
+    },
+    {
+      "id": "form-22",
+      "firstName": "Rebekah",
+      "lastName": "Kottkamp",
+      "email": "rkottkamp@primarycaresb.com",
+      "mobile": "(574) 339-2209",
+      "states": [
+        "IN"
+      ],
+      "personalNPI": "1881018729",
+      "payers": [
+        "Aetna",
+        "BCBS",
+        "Cigna",
+        "Medicaid",
+        "Medicare",
+        "UHC"
+      ],
+      "availability": "Weekdays PM;Weekends (as needed)",
+      "inNetworkConfirmed": true,
+      "lastUpdated": "2025-10-15T14:52:50Z"
+    },
+    {
+      "id": "form-23",
+      "firstName": "Amy",
+      "lastName": "Coggin",
+      "email": "alcoggin@gmail.com",
+      "mobile": "(423) 605-9075",
+      "states": [
+        "GA",
+        "TN"
+      ],
+      "personalNPI": "1356749881",
+      "payers": [
+        "Aetna",
+        "BCBS",
+        "Cigna",
+        "Humana",
+        "Medicaid",
+        "Medicare",
+        "TRICARE",
+        "UHC"
+      ],
+      "availability": "Weekdays PM;Weekends (as needed)",
+      "inNetworkConfirmed": true,
+      "lastUpdated": "2025-10-15T14:52:50Z"
     }
   ]
 }
