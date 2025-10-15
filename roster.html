@@ -12,8 +12,15 @@
   <script src="https://unpkg.com/feather-icons"></script>
   <style>
     #vanta-bg{position:fixed;inset:0;z-index:-1;opacity:.15}
-    .badge{ @apply inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-800; }
-    .chip{ @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700 mr-1 mb-1; }
+.badge{
+  display:inline-flex;align-items:center;padding:0 .5rem;border-radius:.375rem;
+  font-size:.75rem;line-height:1.25rem;background:#f3f4f6;color:#374151;
+}
+.chip{
+  display:inline-flex;align-items:center;padding:.125rem .5rem;border-radius:9999px;
+  font-size:.75rem;line-height:1.25rem;background:#eff6ff;color:#1d4ed8;
+  margin-right:.25rem;margin-bottom:.25rem;
+}
     th.sortable{cursor:pointer}.dir{opacity:.35}.active{color:#111827}
   </style>
 </head>
