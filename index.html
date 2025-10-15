@@ -132,7 +132,6 @@ const normPayer = p => {
     // --- Utils ---
     const qs = (s,p=document)=>p.querySelector(s);
     const el = (tag, cls='', html='')=>{ const d=document.createElement(tag); if(cls) d.className=cls; if(html) d.innerHTML=html; return d; };
-    const normPayer = p => NORMALIZE[p?.trim()] || p?.trim();
     const npiCopy = async (npi)=>{ try{ await navigator.clipboard.writeText(npi); alert('NPI copied'); }catch{ prompt('Copy NPI', npi); } };
 const mailto = (np, st, py)=>{
   const pyLabel = (py === '*') ? 'All payers' : py;
