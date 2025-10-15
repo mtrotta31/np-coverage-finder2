@@ -125,19 +125,20 @@
     const el = (tag, cls='', html='')=>{ const d=document.createElement(tag); if(cls) d.className=cls; if(html) d.innerHTML=html; return d; };
     const normPayer = p => NORMALIZE[p?.trim()] || p?.trim();
     const npiCopy = async (npi)=>{ try{ await navigator.clipboard.writeText(npi); alert('NPI copied'); }catch{ prompt('Copy NPI', npi); } };
-    const mailto = (np, st, py)=>{
-      const subj = encodeURIComponent(`NP Routing — ${st} / ${py}`);
-      const body = encodeURIComponent([
-        `Hi ${np.firstName},`,
-        ``,
-        `We have encounters to bill in ${st} for ${py}.`,
-        `Can you confirm availability to review under your personal NPI (${np.personalNPI})?`,
-        ``,
-        `Thanks,`,
-        `— MedSync Ops`
-      ].join('\n'));
-      return `mailto:${np.email}?subject=${subj}&body=${body}`;
-    };
+const mailto = (np, st, py)=>{
+  const pyLabel = (py === '*') ? 'All payers' : py;
+  const subj = encodeURIComponent(`NP Routing — ${st} / ${pyLabel}`);
+  const body = encodeURIComponent([
+    `Hi ${np.firstName},`,
+    ``,
+    `We have encounters to bill in ${st}${py === '*' ? '' : ` for ${pyLabel}`}.`,
+    `Can you confirm availability to review under your personal NPI (${np.personalNPI})?`,
+    ``,
+    `Thanks,`,
+    `— MedSync Ops`
+  ].join('\n'));
+  return `mailto:${np.email}?subject=${subj}&body=${body}`;
+};
 
     // --- Fetch + hydrate ---
     async function loadRoster(){
@@ -179,64 +180,96 @@
       m.textContent = ver || ts ? `Last updated ${ts || ''} ${ver ? `(${ver})` : ''}` : '';
     }
 
-    function hydratePayerSelect(){
-      const sel = qs('#payer'); sel.innerHTML = `<option value="">Select a payer</option>`;
-      CANON_PAYERS.forEach(p=>{
-        const opt = document.createElement('option'); opt.value=p; opt.textContent=p; sel.appendChild(opt);
-      });
-    }
+function hydratePayerSelect(){
+  const sel = qs('#payer');
+  // add an "All payers" option (value="*")
+  sel.innerHTML = `<option value="">Select a payer</option><option value="*">All payers</option>`;
+  CANON_PAYERS.forEach(p=>{
+    const opt = document.createElement('option');
+    opt.value = p; 
+    opt.textContent = p;
+    sel.appendChild(opt);
+  });
+}
 
-    function match(state, payer){
-      const p = normPayer(payer);
-      return ROSTER.filter(np =>
+function match(state, payer){
+  // If user chose "All payers", ignore payer filtering
+  if (payer === '*') {
+    return ROSTER
+      .filter(np =>
         np.inNetworkConfirmed === true &&
-        np.states.includes(state) &&
-        np.payers.includes(p)
-      ).sort((a,b)=> (b.lastUpdated||0) - (a.lastUpdated||0) || (a.lastName||'').localeCompare(b.lastName||''));
-    }
+        np.states.includes(state)
+      )
+      .sort((a,b)=> (b.lastUpdated||0) - (a.lastUpdated||0) || (a.lastName||'').localeCompare(b.lastName||''));
+  }
+
+  // Otherwise do the normal state + payer match
+  const p = normPayer(payer);
+  return ROSTER
+    .filter(np =>
+      np.inNetworkConfirmed === true &&
+      np.states.includes(state) &&
+      np.payers.includes(p)
+    )
+    .sort((a,b)=> (b.lastUpdated||0) - (a.lastUpdated||0) || (a.lastName||'').localeCompare(b.lastName||''));
+}
 
     function renderResults(list, state, payer){
-      const wrap = qs('#results'); const empty = qs('#empty'); wrap.innerHTML='';
-      if(!state || !payer){ empty.classList.remove('hidden'); return; }
-      if(list.length===0){
-        empty.classList.remove('hidden');
-        empty.textContent = `No matches for ${state} + ${payer}.`;
-        return;
-      }
-      empty.classList.add('hidden');
-      list.forEach(np=>{
-        const card = el('div','bg-white shadow rounded-lg overflow-hidden');
-        const header = el('div','px-4 py-3 bg-gray-50 flex items-center justify-between',
-          `<div>
-             <div class="text-lg font-semibold text-gray-900">${np.firstName} ${np.lastName}</div>
-             <div class="text-sm text-gray-500">Personal NPI: <span class="font-mono">${np.personalNPI}</span></div>
-           </div>
-           <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${np.inNetworkConfirmed?'bg-green-100 text-green-800':'bg-yellow-100 text-yellow-800'}">
-             ${np.inNetworkConfirmed?'In-network':'Unconfirmed'}
-           </span>`);
-        const body = el('div','px-4 py-4','');
-        body.innerHTML = `
-           <dl class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-             <div><dt class="text-sm text-gray-500">States</dt><dd class="text-sm text-gray-900">${np.states.join(', ')}</dd></div>
-             <div><dt class="text-sm text-gray-500">Payers</dt><dd class="text-sm text-gray-900">${np.payers.join(', ')}</dd></div>
-             <div><dt class="text-sm text-gray-500">Contact</dt><dd class="text-sm text-gray-900">${np.email}${np.mobile?` • ${np.mobile}`:''}</dd></div>
-             <div><dt class="text-sm text-gray-500">Availability</dt><dd class="text-sm text-gray-900">${np.availability||'—'}</dd></div>
-           </dl>
-           <div class="mt-4 flex gap-2">
-             <button class="inline-flex items-center px-3 py-2 border rounded-md text-sm" data-copy="${np.personalNPI}">
-               <i data-feather="copy" class="mr-2"></i> Copy NPI
-             </button>
-             <a class="inline-flex items-center px-3 py-2 border rounded-md text-sm" href="${mailto(np, state, payer)}">
-               <i data-feather="mail" class="mr-2"></i> Email provider
-             </a>
-           </div>
-        `;
-        card.appendChild(header); card.appendChild(body); wrap.appendChild(card);
-      });
-      feather.replace();
-      wrap.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click', e=> npiCopy(e.currentTarget.dataset.copy)));
-    }
+  const wrap = qs('#results');
+  const empty = qs('#empty');
+  wrap.innerHTML = '';
 
+  if (!state || !payer) {
+    empty.classList.remove('hidden');
+    empty.textContent = 'Select a state and payer to begin your search.';
+    return;
+  }
+
+  const payerLabel = (payer === '*') ? 'All payers' : payer;
+
+  if (list.length===0){
+    empty.classList.remove('hidden');
+    empty.textContent = `No matches for ${state} + ${payerLabel}.`;
+    return;
+  }
+
+  empty.classList.add('hidden');
+
+  list.forEach(np=>{
+    const card = el('div','bg-white shadow rounded-lg overflow-hidden');
+    const header = el('div','px-4 py-3 bg-gray-50 flex items-center justify-between',
+      `<div>
+         <div class="text-lg font-semibold text-gray-900">${np.firstName} ${np.lastName}</div>
+         <div class="text-sm text-gray-500">Personal NPI: <span class="font-mono">${np.personalNPI}</span></div>
+       </div>
+       <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${np.inNetworkConfirmed?'bg-green-100 text-green-800':'bg-yellow-100 text-yellow-800'}">
+         ${np.inNetworkConfirmed?'In-network':'Unconfirmed'}
+       </span>`);
+    const body = el('div','px-4 py-4','');
+    body.innerHTML = `
+       <dl class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+         <div><dt class="text-sm text-gray-500">States</dt><dd class="text-sm text-gray-900">${np.states.join(', ')}</dd></div>
+         <div><dt class="text-sm text-gray-500">Payers</dt><dd class="text-sm text-gray-900">${np.payers.join(', ')}</dd></div>
+         <div><dt class="text-sm text-gray-500">Contact</dt><dd class="text-sm text-gray-900">${np.email}${np.mobile?` • ${np.mobile}`:''}</dd></div>
+         <div><dt class="text-sm text-gray-500">Availability</dt><dd class="text-sm text-gray-900">${np.availability||'—'}</dd></div>
+       </dl>
+       <div class="mt-4 flex gap-2">
+         <button class="inline-flex items-center px-3 py-2 border rounded-md text-sm" data-copy="${np.personalNPI}">
+           <i data-feather="copy" class="mr-2"></i> Copy NPI
+         </button>
+         <a class="inline-flex items-center px-3 py-2 border rounded-md text-sm" href="${mailto(np, state, payer)}">
+           <i data-feather="mail" class="mr-2"></i> Email provider
+         </a>
+       </div>
+    `;
+    card.appendChild(header); 
+    card.appendChild(body); 
+    wrap.appendChild(card);
+  });
+
+  feather.replace();
+  wrap.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click', e=> npiCopy(e.currentTarget.dataset.copy)));
+}
     // Init
     (async function(){
       try{
