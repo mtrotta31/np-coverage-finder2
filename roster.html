@@ -128,8 +128,20 @@
     feather.replace();
 
     // Canonical payers + normalization
-    const CANON_PAYERS = ["Medicare","Medicaid","Aetna","UHC","BCBS","Cigna"];
-    const NORMALIZE = {"UnitedHealthcare":"UHC","United Healthcare":"UHC","United Health Care":"UHC","UHC":"UHC","Blue Cross Blue Shield":"BCBS","BlueCross BlueShield":"BCBS","BCBS":"BCBS"};
+    const CANON_PAYERS = ["Medicare","Medicaid","Aetna","UHC","BCBS","Cigna","Humana","TRICARE"];
+const NORMALIZE = {
+  "unitedhealthcare":"UHC", "united healthcare":"UHC", "united health care":"UHC", "optum":"UHC", "uhc":"UHC",
+  "blue cross blue shield":"BCBS", "blue cross blue shield / anthem":"BCBS", "anthem":"BCBS", "bcbs":"BCBS",
+  "cigna":"Cigna", "cigna / evernorth":"Cigna", "evernorth":"Cigna",
+  "medicare":"Medicare", "medicaid":"Medicaid", "aetna":"Aetna",
+  "humana":"Humana", "tricare":"TRICARE"
+};
+
+const normKey = s => s?.toString().trim().toLowerCase();
+const normPayer = p => {
+  const k = normKey(p);
+  return NORMALIZE[k] || (p?.toString().trim() || "");
+};
 
     // Utils
     const qs=(s,p=document)=>p.querySelector(s), qsa=(s,p=document)=>Array.from(p.querySelectorAll(s));
@@ -154,7 +166,7 @@
 
         ALL = providers.map(x=>{
           const states = (x.states||[]).filter(Boolean);
-          const payers = (x.payers||[]).map(p=>NORMALIZE[p]||p).filter(Boolean);
+          const payers = (x.payers||[]).map(p=>normPayer(p)).filter(Boolean);
           const name = [x.firstName||'', x.lastName||''].join(' ').trim();
           return {
             id: x.id || crypto.randomUUID(),
