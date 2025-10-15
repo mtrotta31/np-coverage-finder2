@@ -110,11 +110,20 @@
 
   <script>
     // --- Canonical payers + normalization ---
-    const CANON_PAYERS = ["Medicare","Medicaid","Aetna","UHC","BCBS","Cigna"];
-    const NORMALIZE = {
-      "UnitedHealthcare":"UHC","United Healthcare":"UHC","United Health Care":"UHC","UHC":"UHC",
-      "Blue Cross Blue Shield":"BCBS","BlueCross BlueShield":"BCBS","BCBS":"BCBS"
-    };
+    const CANON_PAYERS = ["Medicare","Medicaid","Aetna","UHC","BCBS","Cigna","Humana","TRICARE"];
+const NORMALIZE = {
+  "unitedhealthcare":"UHC", "united healthcare":"UHC", "united health care":"UHC", "optum":"UHC", "uhc":"UHC",
+  "blue cross blue shield":"BCBS", "blue cross blue shield / anthem":"BCBS", "anthem":"BCBS", "bcbs":"BCBS",
+  "cigna":"Cigna", "cigna / evernorth":"Cigna", "evernorth":"Cigna",
+  "medicare":"Medicare", "medicaid":"Medicaid", "aetna":"Aetna",
+  "humana":"Humana", "tricare":"TRICARE"
+};
+
+const normKey = s => s?.toString().trim().toLowerCase();
+const normPayer = p => {
+  const k = normKey(p);
+  return NORMALIZE[k] || (p?.toString().trim() || "");
+};
 
     // --- State ---
     let META = { rosterVersion: null, generatedAt: null };
@@ -151,7 +160,7 @@ const mailto = (np, st, py)=>{
         META.generatedAt   = raw.generatedAt   || null;
 
         ROSTER = providers.map(x=>{
-          const payers = (x.payers||[]).map(normPayer).filter(Boolean);
+const payers = (x.payers||[]).map(normPayer).filter(Boolean);
           return {
             id: x.id, firstName: x.firstName, lastName: x.lastName,
             email: x.email, mobile: x.mobile || '',
