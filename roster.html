@@ -12,15 +12,15 @@
   <script src="https://unpkg.com/feather-icons"></script>
   <style>
     #vanta-bg{position:fixed;inset:0;z-index:-1;opacity:.15}
-.badge{
-  display:inline-flex;align-items:center;padding:0 .5rem;border-radius:.375rem;
-  font-size:.75rem;line-height:1.25rem;background:#f3f4f6;color:#374151;
-}
-.chip{
-  display:inline-flex;align-items:center;padding:.125rem .5rem;border-radius:9999px;
-  font-size:.75rem;line-height:1.25rem;background:#eff6ff;color:#1d4ed8;
-  margin-right:.25rem;margin-bottom:.25rem;
-}
+    .badge{
+      display:inline-flex;align-items:center;padding:0 .5rem;border-radius:.375rem;
+      font-size:.75rem;line-height:1.25rem;background:#f3f4f6;color:#374151;
+    }
+    .chip{
+      display:inline-flex;align-items:center;padding:.125rem .5rem;border-radius:9999px;
+      font-size:.75rem;line-height:1.25rem;background:#eff6ff;color:#1d4ed8;
+      margin-right:.25rem;margin-bottom:.25rem;
+    }
     th.sortable{cursor:pointer}.dir{opacity:.35}.active{color:#111827}
   </style>
 </head>
@@ -121,15 +121,17 @@
         </select>
       </div>
     </div>
+
+    <!-- See-all modal -->
     <div id="seeAllModal" class="fixed inset-0 hidden items-center justify-center bg-black/30 z-50">
-  <div class="bg-white rounded-lg shadow-lg max-w-lg w-full p-4">
-    <div class="flex items-center justify-between mb-2">
-      <h3 class="text-lg font-semibold">All payers</h3>
-      <button id="closeSeeAll" class="text-gray-500 hover:text-gray-900">&times;</button>
+      <div class="bg-white rounded-lg shadow-lg max-w-lg w-full p-4">
+        <div class="flex items-center justify-between mb-2">
+          <h3 class="text-lg font-semibold">All payers</h3>
+          <button id="closeSeeAll" class="text-gray-500 hover:text-gray-900">&times;</button>
+        </div>
+        <div id="seeAllBody" class="text-sm text-gray-900"></div>
+      </div>
     </div>
-    <div id="seeAllBody" class="text-sm text-gray-900"></div>
-  </div>
-</div>
   </main>
 
   <footer class="bg-white mt-12">
@@ -145,29 +147,30 @@
 
     // Canonical payers + normalization
     const CANON_PAYERS = ["Medicare","Medicaid","Aetna","UHC","BCBS","Cigna","Humana","TRICARE"];
-const NORMALIZE = {
-  "unitedhealthcare":"UHC", "united healthcare":"UHC", "united health care":"UHC", "optum":"UHC", "uhc":"UHC",
-  "blue cross blue shield":"BCBS", "blue cross blue shield / anthem":"BCBS", "anthem":"BCBS", "bcbs":"BCBS",
-  "cigna":"Cigna", "cigna / evernorth":"Cigna", "evernorth":"Cigna",
-  "medicare":"Medicare", "medicaid":"Medicaid", "aetna":"Aetna",
-  "humana":"Humana", "tricare":"TRICARE"
-};
+    const NORMALIZE = {
+      "unitedhealthcare":"UHC", "united healthcare":"UHC", "united health care":"UHC", "optum":"UHC", "uhc":"UHC",
+      "blue cross blue shield":"BCBS", "blue cross blue shield / anthem":"BCBS", "anthem":"BCBS", "bcbs":"BCBS",
+      "cigna":"Cigna", "cigna / evernorth":"Cigna", "evernorth":"Cigna",
+      "medicare":"Medicare", "medicaid":"Medicaid", "aetna":"Aetna",
+      "humana":"Humana", "tricare":"TRICARE"
+    };
 
-const normKey = s => s?.toString().trim().toLowerCase();
-const normPayer = p => {
-  const k = normKey(p);
-  return NORMALIZE[k] || (p?.toString().trim() || "");
-};
+    const normKey = s => s?.toString().trim().toLowerCase();
+    const normPayer = p => {
+      const k = normKey(p);
+      return NORMALIZE[k] || (p?.toString().trim() || "");
+    };
+
     function parseOther(s){
-  if(!s) return [];
-  return String(s).split(/[,;]\s*/).map(t=>t.trim()).filter(Boolean);
-}
-function allPayersOf(x){
-  const majors = x.payers || [];
-  const others = x.otherPayers || [];
-  const seen = new Set();
-  return [...majors, ...others].filter(p=> (p && !seen.has(p) && seen.add(p)));
-}
+      if(!s) return [];
+      return String(s).split(/[,;]\s*/).map(t=>t.trim()).filter(Boolean);
+    }
+    function allPayersOf(x){
+      const majors = x.payers || [];
+      const others = x.otherPayers || [];
+      const seen = new Set();
+      return [...majors, ...others].filter(p=> (p && !seen.has(p) && seen.add(p)));
+    }
 
     // Utils
     const qs=(s,p=document)=>p.querySelector(s), qsa=(s,p=document)=>Array.from(p.querySelectorAll(s));
@@ -177,7 +180,7 @@ function allPayersOf(x){
     // State
     let ALL=[], filtered=[];
     let sortKey='lastUpdated', sortDir='desc';
-    let page=1, pageSize=25;
+    let page=1;
     const filters={ states:[], payers:[], search:'', inNet:false };
     const META={ rosterVersion:null, generatedAt:null };
 
@@ -191,22 +194,22 @@ function allPayersOf(x){
         META.generatedAt   = raw.generatedAt   || null;
 
         ALL = providers.map(x=>{
-  const states = (x.states||[]).filter(Boolean);
-  const payers = (x.payers||[]).map(p=>normPayer(p)).filter(Boolean);
-  const other  = Array.isArray(x.otherPayers) ? x.otherPayers : parseOther(x.otherPayersNote); // +
-  const name = [x.firstName||'', x.lastName||''].join(' ').trim();
-  return {
-    id: x.id || crypto.randomUUID(),
-    firstName:x.firstName||'', lastName:x.lastName||'',
-    email:x.email||'', mobile:x.mobile||'',
-    states, personalNPI:x.personalNPI||'',
-    payers, otherPayers:(other||[]).filter(Boolean), // +
-    availability:x.availability||'',
-    inNetworkConfirmed: !!x.inNetworkConfirmed,
-    name, statesCount: states.length, payersCount: payers.length + (other?other.length:0), // +
-    lastUpdated: x.lastUpdated ? Date.parse(x.lastUpdated) : 0
-  };
-});
+          const states = (x.states||[]).filter(Boolean);
+          const payers = (x.payers||[]).map(p=>normPayer(p)).filter(Boolean);
+          const other  = Array.isArray(x.otherPayers) ? x.otherPayers : parseOther(x.otherPayersNote);
+          const name = [x.firstName||'', x.lastName||''].join(' ').trim();
+          return {
+            id: x.id || (crypto.randomUUID ? crypto.randomUUID() : String(Math.random()).slice(2)),
+            firstName:x.firstName||'', lastName:x.lastName||'',
+            email:x.email||'', mobile:x.mobile||'',
+            states, personalNPI:x.personalNPI||'',
+            payers, otherPayers:(other||[]).filter(Boolean),
+            availability:x.availability||'',
+            inNetworkConfirmed: !!x.inNetworkConfirmed,
+            name, statesCount: states.length, payersCount: payers.length + (other?other.length:0),
+            lastUpdated: x.lastUpdated ? Date.parse(x.lastUpdated) : 0
+          };
+        });
       }catch(e){
         qs('#warn').classList.remove('hidden');
         ALL = [
@@ -228,9 +231,20 @@ function allPayersOf(x){
     function hydrateChips(){
       const states = uniq(ALL.flatMap(x=>x.states)).sort();
       const payers = uniq(ALL.flatMap(x=>x.payers)).sort();
-      const make=(label, group)=>{ const b=document.createElement('button'); b.className='chip'; b.textContent=label; b.dataset.value=label; b.dataset.group=group; b.onclick=()=>{ const arr=filters[group]; const i=arr.indexOf(label); (i>=0?arr.splice(i,1):arr.push(label)); renderChipState(); apply(); }; return b; };
+      const make=(label, group)=>{
+        const b=document.createElement('button');
+        b.className='chip'; b.textContent=label; b.dataset.value=label; b.dataset.group=group;
+        b.onclick=()=>{
+          const arr=filters[group];
+          const i=arr.indexOf(label);
+          (i>=0?arr.splice(i,1):arr.push(label));
+          renderChipState(); page=1; apply();
+        };
+        return b;
+      };
       const sf=qs('#stateFilter'); const pf=qs('#payerFilter'); sf.innerHTML=''; pf.innerHTML='';
-      states.forEach(s=>sf.appendChild(make(s,'states'))); payers.forEach(p=>pf.appendChild(make(p,'payers')));
+      states.forEach(s=>sf.appendChild(make(s,'states')));
+      payers.forEach(p=>pf.appendChild(make(p,'payers')));
       renderChipState();
     }
 
@@ -258,6 +272,11 @@ function allPayersOf(x){
         if(A>B) return sortDir==='asc'? 1:-1;
         return (a.lastName||'').localeCompare(b.lastName||'');
       });
+
+      // keep page in range after filters change
+      const ps=parseInt(qs('#pageSize').value,10);
+      const max=Math.max(1, Math.ceil(filtered.length/ps));
+      if(page>max) page=max;
 
       qs('#countLabel').textContent=`Showing ${filtered.length} provider${filtered.length===1?'':'s'}`;
       renderStats();
@@ -298,25 +317,10 @@ function allPayersOf(x){
           <td class="px-6 py-3">${x.states.map(s=>`<span class="badge mr-1">${s}</span>`).join('')}</td>
           <td class="px-6 py-3 font-mono">${x.personalNPI}</td>
           <td class="px-6 py-3">
-  ${x.payers.map(p=>`<span class="badge mr-1">${p}</span>`).join('')}
-  ${x.otherPayers && x.otherPayers.length ? 
-    `<button class="text-xs underline ml-1" data-seeall="${x.id}">(+${x.otherPayers.length} more)</button>` : ``}
-</td>
-// See-all modal handlers
-document.addEventListener('click', (e)=>{
-  const btn = e.target.closest('[data-seeall]');
-  if(btn){
-    const id = btn.getAttribute('data-seeall');
-    const item = ALL.find(p=>p.id===id);
-    if(item){
-      qs('#seeAllBody').innerHTML = allPayersOf(item).map(p=>`<span class="badge mr-1 mb-1">${p}</span>`).join('');
-      const m = qs('#seeAllModal'); m.classList.remove('hidden'); m.classList.add('flex');
-    }
-  }
-  if(e.target.id==='closeSeeAll' || e.target.id==='seeAllModal'){ 
-    const m = qs('#seeAllModal'); m.classList.add('hidden'); m.classList.remove('flex');
-  }
-});
+            ${x.payers.map(p=>`<span class="badge mr-1">${p}</span>`).join('')}
+            ${x.otherPayers && x.otherPayers.length ? 
+              `<button class="text-xs underline ml-1" data-seeall="${x.id}">(+${x.otherPayers.length} more)</button>` : ``}
+          </td>
           <td class="px-6 py-3">${x.email}</td>
           <td class="px-6 py-3">${x.mobile||''}</td>
           <td class="px-6 py-3">${x.availability||''}</td>
@@ -343,6 +347,22 @@ document.addEventListener('click', (e)=>{
         th.onclick=()=>{ const key=th.dataset.key; if(sortKey===key){sortDir=(sortDir==='asc'?'desc':'asc');} else {sortKey=key;sortDir='asc';} apply(); };
       });
     }
+
+    // Global click handlers (wired once) — moved OUT of the table template
+    document.addEventListener('click', (e)=>{
+      const btn = e.target.closest('[data-seeall]');
+      if(btn){
+        const id = btn.getAttribute('data-seeall');
+        const item = ALL.find(p=>p.id===id);
+        if(item){
+          qs('#seeAllBody').innerHTML = allPayersOf(item).map(p=>`<span class="badge mr-1 mb-1">${p}</span>`).join('');
+          const m = qs('#seeAllModal'); m.classList.remove('hidden'); m.classList.add('flex');
+        }
+      }
+      if(e.target.id==='closeSeeAll' || e.target.id==='seeAllModal'){ 
+        const m = qs('#seeAllModal'); m.classList.add('hidden'); m.classList.remove('flex');
+      }
+    });
 
     // Events
     qs('#search').addEventListener('input', e=>{ filters.search=e.target.value; page=1; apply(); });
