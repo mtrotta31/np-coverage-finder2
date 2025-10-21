@@ -147,7 +147,17 @@ const mailto = (np, st, py)=>{
   ].join('\n'));
   return `mailto:${np.email}?subject=${subj}&body=${body}`;
 };
-
+function parseOther(s){
+  if(!s) return [];
+  return String(s).split(/[,;]\s*/).map(t=>t.trim()).filter(Boolean);
+}
+function allPayersOf(np){
+  const majors = np.payers || [];
+  const others = np.otherPayers || [];
+  // keep majors first, then others (dedup)
+  const seen = new Set();
+  return [...majors, ...others].filter(p=> (p && !seen.has(p) && seen.add(p)));
+}
     // --- Fetch + hydrate ---
     async function loadRoster(){
       try{
@@ -158,18 +168,21 @@ const mailto = (np, st, py)=>{
         META.rosterVersion = raw.rosterVersion || null;
         META.generatedAt   = raw.generatedAt   || null;
 
-        ROSTER = providers.map(x=>{
-const payers = (x.payers||[]).map(normPayer).filter(Boolean);
-          return {
-            id: x.id, firstName: x.firstName, lastName: x.lastName,
-            email: x.email, mobile: x.mobile || '',
-            states: (x.states||[]).filter(Boolean),
-            personalNPI: x.personalNPI || '',
-            payers, availability: x.availability || '',
-            inNetworkConfirmed: !!x.inNetworkConfirmed,
-            lastUpdated: x.lastUpdated ? Date.parse(x.lastUpdated) : 0
-          };
-        });
+ROSTER = providers.map(x=>{
+  const payers = (x.payers||[]).map(normPayer).filter(Boolean);
+  const other  = Array.isArray(x.otherPayers) ? x.otherPayers : parseOther(x.otherPayersNote); // +
+  return {
+    id: x.id, firstName: x.firstName, lastName: x.lastName,
+    email: x.email, mobile: x.mobile || '',
+    states: (x.states||[]).filter(Boolean),
+    personalNPI: x.personalNPI || '',
+    payers, 
+    otherPayers: (other||[]).filter(Boolean), // +
+    availability: x.availability || '',
+    inNetworkConfirmed: !!x.inNetworkConfirmed,
+    lastUpdated: x.lastUpdated ? Date.parse(x.lastUpdated) : 0
+  };
+});
       } catch(e){
         // Fallback (sample)
         ROSTER = [
@@ -253,23 +266,43 @@ function match(state, payer){
        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${np.inNetworkConfirmed?'bg-green-100 text-green-800':'bg-yellow-100 text-yellow-800'}">
          ${np.inNetworkConfirmed?'In-network':'Unconfirmed'}
        </span>`);
-    const body = el('div','px-4 py-4','');
-    body.innerHTML = `
-       <dl class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-         <div><dt class="text-sm text-gray-500">States</dt><dd class="text-sm text-gray-900">${np.states.join(', ')}</dd></div>
-         <div><dt class="text-sm text-gray-500">Payers</dt><dd class="text-sm text-gray-900">${np.payers.join(', ')}</dd></div>
-         <div><dt class="text-sm text-gray-500">Contact</dt><dd class="text-sm text-gray-900">${np.email}${np.mobile?` • ${np.mobile}`:''}</dd></div>
-         <div><dt class="text-sm text-gray-500">Availability</dt><dd class="text-sm text-gray-900">${np.availability||'—'}</dd></div>
-       </dl>
-       <div class="mt-4 flex gap-2">
-         <button class="inline-flex items-center px-3 py-2 border rounded-md text-sm" data-copy="${np.personalNPI}">
-           <i data-feather="copy" class="mr-2"></i> Copy NPI
-         </button>
-         <a class="inline-flex items-center px-3 py-2 border rounded-md text-sm" href="${mailto(np, state, payer)}">
-           <i data-feather="mail" class="mr-2"></i> Email provider
-         </a>
-       </div>
-    `;
+const body = el('div','px-4 py-4','');
+body.innerHTML = `
+  <dl class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+    <div><dt class="text-sm text-gray-500">States</dt><dd class="text-sm text-gray-900">${np.states.join(', ')}</dd></div>
+    <div>
+      <dt class="text-sm text-gray-500">Payers</dt>
+      <dd class="text-sm text-gray-900">
+        ${np.payers.join(', ')}
+        ${np.otherPayers && np.otherPayers.length ? 
+          `<button class="text-xs text-primary underline ml-1" data-toggle="more-${np.id}">See all</button>` : ``}
+        ${np.otherPayers && np.otherPayers.length ? 
+          `<div id="more-${np.id}" class="mt-2 hidden">
+             <div class="text-xs text-gray-500">All payers</div>
+             <div class="text-sm text-gray-900">${allPayersOf(np).join(', ')}</div>
+           </div>` : ``}
+      </dd>
+    </div>
+    <div><dt class="text-sm text-gray-500">Contact</dt><dd class="text-sm text-gray-900">${np.email}${np.mobile?` • ${np.mobile}`:''}</dd></div>
+    <div><dt class="text-sm text-gray-500">Availability</dt><dd class="text-sm text-gray-900">${np.availability||'—'}</dd></div>
+  </dl>
+  <div class="mt-4 flex gap-2">
+    <button class="inline-flex items-center px-3 py-2 border rounded-md text-sm" data-copy="${np.personalNPI}">
+      <i data-feather="copy" class="mr-2"></i> Copy NPI
+    </button>
+    <a class="inline-flex items-center px-3 py-2 border rounded-md text-sm" href="${mailto(np, state, payer)}">
+      <i data-feather="mail" class="mr-2"></i> Email provider
+    </a>
+  </div>
+`;
+    // Toggle "See all"
+wrap.addEventListener('click', (e)=>{
+  const btn = e.target.closest('[data-toggle]');
+  if(!btn) return;
+  const id = btn.getAttribute('data-toggle');
+  const box = document.getElementById(id);
+  if(box){ box.classList.toggle('hidden'); btn.textContent = box.classList.contains('hidden') ? 'See all' : 'Hide'; }
+});
     card.appendChild(header); 
     card.appendChild(body); 
     wrap.appendChild(card);
