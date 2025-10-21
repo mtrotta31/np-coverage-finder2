@@ -121,6 +121,15 @@
         </select>
       </div>
     </div>
+    <div id="seeAllModal" class="fixed inset-0 hidden items-center justify-center bg-black/30 z-50">
+  <div class="bg-white rounded-lg shadow-lg max-w-lg w-full p-4">
+    <div class="flex items-center justify-between mb-2">
+      <h3 class="text-lg font-semibold">All payers</h3>
+      <button id="closeSeeAll" class="text-gray-500 hover:text-gray-900">&times;</button>
+    </div>
+    <div id="seeAllBody" class="text-sm text-gray-900"></div>
+  </div>
+</div>
   </main>
 
   <footer class="bg-white mt-12">
@@ -149,6 +158,16 @@ const normPayer = p => {
   const k = normKey(p);
   return NORMALIZE[k] || (p?.toString().trim() || "");
 };
+    function parseOther(s){
+  if(!s) return [];
+  return String(s).split(/[,;]\s*/).map(t=>t.trim()).filter(Boolean);
+}
+function allPayersOf(x){
+  const majors = x.payers || [];
+  const others = x.otherPayers || [];
+  const seen = new Set();
+  return [...majors, ...others].filter(p=> (p && !seen.has(p) && seen.add(p)));
+}
 
     // Utils
     const qs=(s,p=document)=>p.querySelector(s), qsa=(s,p=document)=>Array.from(p.querySelectorAll(s));
@@ -172,20 +191,22 @@ const normPayer = p => {
         META.generatedAt   = raw.generatedAt   || null;
 
         ALL = providers.map(x=>{
-          const states = (x.states||[]).filter(Boolean);
-          const payers = (x.payers||[]).map(p=>normPayer(p)).filter(Boolean);
-          const name = [x.firstName||'', x.lastName||''].join(' ').trim();
-          return {
-            id: x.id || crypto.randomUUID(),
-            firstName:x.firstName||'', lastName:x.lastName||'',
-            email:x.email||'', mobile:x.mobile||'',
-            states, personalNPI:x.personalNPI||'',
-            payers, availability:x.availability||'',
-            inNetworkConfirmed: !!x.inNetworkConfirmed,
-            name, statesCount: states.length, payersCount: payers.length,
-            lastUpdated: x.lastUpdated ? Date.parse(x.lastUpdated) : 0
-          };
-        });
+  const states = (x.states||[]).filter(Boolean);
+  const payers = (x.payers||[]).map(p=>normPayer(p)).filter(Boolean);
+  const other  = Array.isArray(x.otherPayers) ? x.otherPayers : parseOther(x.otherPayersNote); // +
+  const name = [x.firstName||'', x.lastName||''].join(' ').trim();
+  return {
+    id: x.id || crypto.randomUUID(),
+    firstName:x.firstName||'', lastName:x.lastName||'',
+    email:x.email||'', mobile:x.mobile||'',
+    states, personalNPI:x.personalNPI||'',
+    payers, otherPayers:(other||[]).filter(Boolean), // +
+    availability:x.availability||'',
+    inNetworkConfirmed: !!x.inNetworkConfirmed,
+    name, statesCount: states.length, payersCount: payers.length + (other?other.length:0), // +
+    lastUpdated: x.lastUpdated ? Date.parse(x.lastUpdated) : 0
+  };
+});
       }catch(e){
         qs('#warn').classList.remove('hidden');
         ALL = [
@@ -276,7 +297,26 @@ const normPayer = p => {
           </td>
           <td class="px-6 py-3">${x.states.map(s=>`<span class="badge mr-1">${s}</span>`).join('')}</td>
           <td class="px-6 py-3 font-mono">${x.personalNPI}</td>
-          <td class="px-6 py-3">${x.payers.map(p=>`<span class="badge mr-1">${p}</span>`).join('')}</td>
+          <td class="px-6 py-3">
+  ${x.payers.map(p=>`<span class="badge mr-1">${p}</span>`).join('')}
+  ${x.otherPayers && x.otherPayers.length ? 
+    `<button class="text-xs underline ml-1" data-seeall="${x.id}">(+${x.otherPayers.length} more)</button>` : ``}
+</td>
+// See-all modal handlers
+document.addEventListener('click', (e)=>{
+  const btn = e.target.closest('[data-seeall]');
+  if(btn){
+    const id = btn.getAttribute('data-seeall');
+    const item = ALL.find(p=>p.id===id);
+    if(item){
+      qs('#seeAllBody').innerHTML = allPayersOf(item).map(p=>`<span class="badge mr-1 mb-1">${p}</span>`).join('');
+      const m = qs('#seeAllModal'); m.classList.remove('hidden'); m.classList.add('flex');
+    }
+  }
+  if(e.target.id==='closeSeeAll' || e.target.id==='seeAllModal'){ 
+    const m = qs('#seeAllModal'); m.classList.add('hidden'); m.classList.remove('flex');
+  }
+});
           <td class="px-6 py-3">${x.email}</td>
           <td class="px-6 py-3">${x.mobile||''}</td>
           <td class="px-6 py-3">${x.availability||''}</td>
