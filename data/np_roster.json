@@ -1,6 +1,6 @@
 {
   "rosterVersion": "2025.10.23",
-  "generatedAt": "2025-10-23T15:00:25Z",
+  "generatedAt": "2025-10-23T18:14:10Z",
   "providers": [
     {
       "id": "form-LindaThomas",
@@ -21,7 +21,7 @@
       ],
       "availability": "Weekdays PM;Weekends (as needed)",
       "inNetworkConfirmed": true,
-      "lastUpdated": "2025-10-23T15:00:25Z"
+      "lastUpdated": "2025-10-23T18:14:10Z"
     },
     {
       "id": "form-DeidraThompson",
@@ -51,7 +51,7 @@
       ],
       "availability": "Weekdays AM;Weekdays PM;Weekends (as needed)",
       "inNetworkConfirmed": true,
-      "lastUpdated": "2025-10-23T15:00:25Z",
+      "lastUpdated": "2025-10-23T18:14:10Z",
       "otherPayers": [
         "Mississippi Medicaid",
         "Mississippi Medicare",
@@ -80,7 +80,7 @@
       ],
       "availability": "Weekdays PM;Weekends (as needed);Weekdays AM",
       "inNetworkConfirmed": true,
-      "lastUpdated": "2025-10-23T15:00:25Z",
+      "lastUpdated": "2025-10-23T18:14:10Z",
       "otherPayers": [
         "Ambetter",
         "Golden Rule",
@@ -133,7 +133,7 @@
       ],
       "availability": "Weekdays PM;Weekends (as needed)",
       "inNetworkConfirmed": true,
-      "lastUpdated": "2025-10-23T15:00:25Z",
+      "lastUpdated": "2025-10-23T18:14:10Z",
       "otherPayers": [
         "Molina"
       ]
@@ -158,7 +158,7 @@
       ],
       "availability": "Weekends (as needed);Weekdays PM",
       "inNetworkConfirmed": true,
-      "lastUpdated": "2025-10-23T15:00:25Z"
+      "lastUpdated": "2025-10-23T18:14:10Z"
     },
     {
       "id": "form-ShaynaPerkins",
@@ -185,7 +185,7 @@
       ],
       "availability": "Weekdays PM;Weekends (as needed)",
       "inNetworkConfirmed": true,
-      "lastUpdated": "2025-10-23T15:00:25Z",
+      "lastUpdated": "2025-10-23T18:14:10Z",
       "otherPayers": [
         "Ambetter",
         "Magnolia Health",
@@ -215,7 +215,7 @@
       ],
       "availability": "Weekdays PM;Weekends (as needed)",
       "inNetworkConfirmed": true,
-      "lastUpdated": "2025-10-23T15:00:25Z",
+      "lastUpdated": "2025-10-23T18:14:10Z",
       "otherPayers": [
         "Medicare Advantage"
       ]
@@ -239,7 +239,7 @@
       ],
       "availability": "Weekdays AM;Weekdays PM;Weekends (as needed)",
       "inNetworkConfirmed": true,
-      "lastUpdated": "2025-10-23T15:00:25Z",
+      "lastUpdated": "2025-10-23T18:14:10Z",
       "otherPayers": [
         "First Health Network",
         "HPN commercial",
@@ -278,7 +278,7 @@
       ],
       "availability": "Weekends (as needed);Weekdays PM;Weekdays AM",
       "inNetworkConfirmed": true,
-      "lastUpdated": "2025-10-23T15:00:25Z"
+      "lastUpdated": "2025-10-23T18:14:10Z"
     }
   ]
 }
