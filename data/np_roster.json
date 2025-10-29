@@ -1,6 +1,6 @@
 {
-  "rosterVersion": "2025.10.23",
-  "generatedAt": "2025-10-23T18:14:10Z",
+  "rosterVersion": "2025.10.29",
+  "generatedAt": "2025-10-29T15:09:30Z",
   "providers": [
     {
       "id": "form-LindaThomas",
@@ -21,7 +21,7 @@
       ],
       "availability": "Weekdays PM;Weekends (as needed)",
       "inNetworkConfirmed": true,
-      "lastUpdated": "2025-10-23T18:14:10Z"
+      "lastUpdated": "2025-10-29T15:09:30Z"
     },
     {
       "id": "form-DeidraThompson",
@@ -51,7 +51,7 @@
       ],
       "availability": "Weekdays AM;Weekdays PM;Weekends (as needed)",
       "inNetworkConfirmed": true,
-      "lastUpdated": "2025-10-23T18:14:10Z",
+      "lastUpdated": "2025-10-29T15:09:30Z",
       "otherPayers": [
         "Mississippi Medicaid",
         "Mississippi Medicare",
@@ -80,7 +80,7 @@
       ],
       "availability": "Weekdays PM;Weekends (as needed);Weekdays AM",
       "inNetworkConfirmed": true,
-      "lastUpdated": "2025-10-23T18:14:10Z",
+      "lastUpdated": "2025-10-29T15:09:30Z",
       "otherPayers": [
         "Ambetter",
         "Golden Rule",
@@ -133,7 +133,7 @@
       ],
       "availability": "Weekdays PM;Weekends (as needed)",
       "inNetworkConfirmed": true,
-      "lastUpdated": "2025-10-23T18:14:10Z",
+      "lastUpdated": "2025-10-29T15:09:30Z",
       "otherPayers": [
         "Molina"
       ]
@@ -158,7 +158,7 @@
       ],
       "availability": "Weekends (as needed);Weekdays PM",
       "inNetworkConfirmed": true,
-      "lastUpdated": "2025-10-23T18:14:10Z"
+      "lastUpdated": "2025-10-29T15:09:30Z"
     },
     {
       "id": "form-ShaynaPerkins",
@@ -185,7 +185,7 @@
       ],
       "availability": "Weekdays PM;Weekends (as needed)",
       "inNetworkConfirmed": true,
-      "lastUpdated": "2025-10-23T18:14:10Z",
+      "lastUpdated": "2025-10-29T15:09:30Z",
       "otherPayers": [
         "Ambetter",
         "Magnolia Health",
@@ -215,7 +215,7 @@
       ],
       "availability": "Weekdays PM;Weekends (as needed)",
       "inNetworkConfirmed": true,
-      "lastUpdated": "2025-10-23T18:14:10Z",
+      "lastUpdated": "2025-10-29T15:09:30Z",
       "otherPayers": [
         "Medicare Advantage"
       ]
@@ -239,7 +239,7 @@
       ],
       "availability": "Weekdays AM;Weekdays PM;Weekends (as needed)",
       "inNetworkConfirmed": true,
-      "lastUpdated": "2025-10-23T18:14:10Z",
+      "lastUpdated": "2025-10-29T15:09:30Z",
       "otherPayers": [
         "First Health Network",
         "HPN commercial",
@@ -278,7 +278,117 @@
       ],
       "availability": "Weekends (as needed);Weekdays PM;Weekdays AM",
       "inNetworkConfirmed": true,
-      "lastUpdated": "2025-10-23T18:14:10Z"
+      "lastUpdated": "2025-10-29T15:09:30Z"
+    },
+    {
+      "id": "form-RebeccaScarpa",
+      "firstName": "Rebecca",
+      "lastName": "Scarpa",
+      "email": "scarpa.becky@gmail.com",
+      "mobile": "(775) 291-8125",
+      "states": [
+        "NV"
+      ],
+      "personalNPI": "1104992171",
+      "payers": [
+        "Aetna",
+        "BCBS",
+        "Cigna",
+        "Humana",
+        "Medicaid",
+        "Medicare",
+        "TRICARE",
+        "UHC"
+      ],
+      "availability": "Weekends (as needed);Weekdays AM;Weekdays PM",
+      "inNetworkConfirmed": true,
+      "lastUpdated": "2025-10-29T15:09:30Z"
+    },
+    {
+      "id": "form-KarenPryor",
+      "firstName": "Karen",
+      "lastName": "Pryor",
+      "email": "kltpryor@gmail.com",
+      "mobile": "(251) 458-8522",
+      "states": [
+        "AZ",
+        "CT",
+        "FL",
+        "IL",
+        "LA",
+        "MA",
+        "ME",
+        "NH",
+        "NY",
+        "VT",
+        "WA"
+      ],
+      "personalNPI": "1376709865",
+      "payers": [
+        "Aetna",
+        "BCBS",
+        "Medicaid",
+        "Medicare",
+        "TRICARE"
+      ],
+      "availability": "Weekdays AM",
+      "inNetworkConfirmed": true,
+      "lastUpdated": "2025-10-29T15:09:30Z",
+      "otherPayers": [
+        "Tufts MA"
+      ]
+    },
+    {
+      "id": "form-AntiquaSmart",
+      "firstName": "Antiqua",
+      "lastName": "Smart",
+      "email": "ansmartnp@gmail.com",
+      "mobile": "(225) 937-7491",
+      "states": [
+        "AL",
+        "CA",
+        "CO",
+        "FL",
+        "LA",
+        "NY",
+        "TN",
+        "TX",
+        "VA"
+      ],
+      "personalNPI": "1487837985",
+      "payers": [
+        "Aetna",
+        "BCBS",
+        "Humana",
+        "Medicaid",
+        "Medicare",
+        "UHC"
+      ],
+      "availability": "Weekdays PM;Weekends (as needed)",
+      "inNetworkConfirmed": true,
+      "lastUpdated": "2025-10-29T15:09:30Z"
+    },
+    {
+      "id": "form-RebekahKottkamp",
+      "firstName": "Rebekah",
+      "lastName": "Kottkamp",
+      "email": "rkottkamp@primarycaresb.com",
+      "mobile": "(574) 339-2209",
+      "states": [
+        "IN"
+      ],
+      "personalNPI": "1881018729",
+      "payers": [
+        "Aetna",
+        "BCBS",
+        "Cigna",
+        "Medicaid",
+        "Medicare",
+        "UHC"
+      ],
+      "availability": "Weekdays PM;Weekends (as needed)",
+      "inNetworkConfirmed": true,
+      "lastUpdated": "2025-10-29T15:09:30Z"
     }
   ]
 }
