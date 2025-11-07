@@ -1,46 +1,12 @@
 {
   "rosterVersion": "2025.11.07",
-  "generatedAt": "2025-11-07T21:33:04Z",
+  "generatedAt": "2025-11-07T21:36:02Z",
   "providers": [
-    {
-      "id": "form-MargaretSydnettMcNeese",
-      "firstName": "Margaret Sydnett",
-      "lastName": "McNeese",
-      "email": "anonymous",
-      "mobile": "(601) 757-8751",
-      "states": [
-        "LA",
-        "MS"
-      ],
-      "personalNPI": "1538803325",
-      "payers": [],
-      "availability": "Weekdays AM;Weekdays PM;Weekends (as needed)",
-      "inNetworkConfirmed": false,
-      "lastUpdated": "2025-11-07T21:33:04Z",
-      "otherPayers": [
-        "I am looking forward to hearing from MedSync."
-      ]
-    },
-    {
-      "id": "form-OmaRamsubhag",
-      "firstName": "Oma",
-      "lastName": "Ramsubhag",
-      "email": "anonymous",
-      "mobile": "(561) 802-8312",
-      "states": [
-        "PA"
-      ],
-      "personalNPI": "1659875615",
-      "payers": [],
-      "availability": "Weekdays PM;Weekdays AM;Weekends (as needed)",
-      "inNetworkConfirmed": false,
-      "lastUpdated": "2025-11-07T21:33:04Z"
-    },
     {
       "id": "form-LindaThomas",
       "firstName": "Linda",
       "lastName": "Thomas",
-      "email": "anonymous",
+      "email": "llgilbert2@crimson.ua.edu",
       "mobile": "(601) 201-1292",
       "states": [
         "AR",
@@ -48,123 +14,20 @@
         "MS"
       ],
       "personalNPI": "1750857769",
-      "payers": [],
+      "payers": [
+        "BCBS",
+        "Medicaid",
+        "Medicare"
+      ],
       "availability": "Weekdays PM;Weekends (as needed)",
-      "inNetworkConfirmed": false,
-      "lastUpdated": "2025-11-07T21:33:04Z",
-      "otherPayers": [
-        "Not at this time",
-        "Yes"
-      ]
-    },
-    {
-      "id": "form-GwendolynnHarris-Cocroft",
-      "firstName": "Gwendolynn",
-      "lastName": "Harris-Cocroft",
-      "email": "anonymous",
-      "mobile": "(601) 543-8165",
-      "states": [
-        "LA",
-        "MS",
-        "TX"
-      ],
-      "personalNPI": "1659660512",
-      "payers": [],
-      "availability": "Weekdays PM;Weekends (as needed)",
-      "inNetworkConfirmed": false,
-      "lastUpdated": "2025-11-07T21:33:04Z",
-      "otherPayers": [
-        "I believe once orientation occurs",
-        "there will be a better understanding and perhaps more questions."
-      ]
-    },
-    {
-      "id": "form-SarenaSloot",
-      "firstName": "Sarena",
-      "lastName": "Sloot",
-      "email": "anonymous",
-      "mobile": "(509) 302-5049",
-      "states": [
-        "AZ",
-        "CA",
-        "FL",
-        "HI",
-        "ID",
-        "MT",
-        "OH",
-        "OR",
-        "WA"
-      ],
-      "personalNPI": "1083058762",
-      "payers": [],
-      "availability": "Weekdays AM;Weekdays PM;Weekends (as needed)",
-      "inNetworkConfirmed": false,
-      "lastUpdated": "2025-11-07T21:33:04Z"
-    },
-    {
-      "id": "form-MandaWetzel",
-      "firstName": "Manda",
-      "lastName": "Wetzel",
-      "email": "anonymous",
-      "mobile": "(717) 818-9912",
-      "states": [
-        "NC",
-        "SC"
-      ],
-      "personalNPI": "1295374692",
-      "payers": [],
-      "availability": "Weekdays AM;Weekends (as needed)",
-      "inNetworkConfirmed": false,
-      "lastUpdated": "2025-11-07T21:33:04Z",
-      "otherPayers": [
-        "I feel that I may need to add a supervising",
-        "I'm excited to learn more and really feel this is such a needed service for patients.",
-        "collaborative physician to my license for this role in order to bill insurance. We ran into this issue in my current full time job and had to obtain a supervising physician that was within state lines. Otherwise"
-      ]
-    },
-    {
-      "id": "form-DavidPreston",
-      "firstName": "David",
-      "lastName": "Preston",
-      "email": "anonymous",
-      "mobile": "(727) 804-3360",
-      "states": [
-        "FL"
-      ],
-      "personalNPI": "1013933787",
-      "payers": [],
-      "availability": "Weekdays AM;Weekdays PM;Weekends (as needed)",
-      "inNetworkConfirmed": false,
-      "lastUpdated": "2025-11-07T21:33:04Z",
-      "otherPayers": [
-        "I am willing to get credentialed as a individual under additional insurers. I am also willing to get licensed as an NP is additional states.",
-        "Yes"
-      ]
-    },
-    {
-      "id": "form-LeekieshiaGrimsley",
-      "firstName": "Leekieshia",
-      "lastName": "Grimsley",
-      "email": "anonymous",
-      "mobile": "(910) 330-7352",
-      "states": [
-        "GA"
-      ],
-      "personalNPI": "1487235354",
-      "payers": [],
-      "availability": "Weekdays AM;Weekends (as needed);Weekdays PM",
-      "inNetworkConfirmed": false,
-      "lastUpdated": "2025-11-07T21:33:04Z",
-      "otherPayers": [
-        "I am planning to obtain other state licenses.",
-        "Yes"
-      ]
+      "inNetworkConfirmed": true,
+      "lastUpdated": "2025-11-07T21:36:02Z"
     },
     {
       "id": "form-DeidraThompson",
       "firstName": "Deidra",
       "lastName": "Thompson",
-      "email": "anonymous",
+      "email": "deidranp@gmail.com",
       "mobile": "(601) 613-5217",
       "states": [
         "AZ",
@@ -179,144 +42,57 @@
         "VA"
       ],
       "personalNPI": "1033585286",
-      "payers": [],
+      "payers": [
+        "Aetna",
+        "BCBS",
+        "Cigna",
+        "Humana",
+        "UHC"
+      ],
       "availability": "Weekdays AM;Weekdays PM;Weekends (as needed)",
-      "inNetworkConfirmed": false,
-      "lastUpdated": "2025-11-07T21:33:04Z",
+      "inNetworkConfirmed": true,
+      "lastUpdated": "2025-11-07T21:36:02Z",
       "otherPayers": [
-        "Yes"
+        "Mississippi Medicaid",
+        "Mississippi Medicare",
+        "Molina"
       ]
     },
     {
-      "id": "form-RebeccaScarpa",
-      "firstName": "Rebecca",
-      "lastName": "Scarpa",
-      "email": "anonymous",
-      "mobile": "(775) 291-8125",
-      "states": [
-        "NV"
-      ],
-      "personalNPI": "1104992171",
-      "payers": [],
-      "availability": "Weekends (as needed);Weekdays AM;Weekdays PM",
-      "inNetworkConfirmed": false,
-      "lastUpdated": "2025-11-07T21:33:04Z",
-      "otherPayers": [
-        "I am interested in the compensation. I am not understanding how we will enter into so many different EMRs",
-        "but I am sure this will be covered in training with Nurse Taylor."
-      ]
-    },
-    {
-      "id": "form-AmyCoggin",
-      "firstName": "Amy",
-      "lastName": "Coggin",
-      "email": "anonymous",
-      "mobile": "(423) 605-9075",
-      "states": [
-        "GA",
-        "TN"
-      ],
-      "personalNPI": "1356749881",
-      "payers": [],
-      "availability": "Weekdays PM;Weekends (as needed)",
-      "inNetworkConfirmed": false,
-      "lastUpdated": "2025-11-07T21:33:04Z"
-    },
-    {
-      "id": "form-KatrinaGallivan",
-      "firstName": "Katrina",
-      "lastName": "Gallivan",
-      "email": "anonymous",
-      "mobile": "(580) 319-6373",
-      "states": [
-        "AR",
-        "UT"
-      ],
-      "personalNPI": "1972055185",
-      "payers": [],
-      "availability": "Weekdays PM;Weekends (as needed)",
-      "inNetworkConfirmed": false,
-      "lastUpdated": "2025-11-07T21:33:04Z"
-    },
-    {
-      "id": "form-MaryAngela(Angie)Eaton",
-      "firstName": "Mary Angela (Angie)",
+      "id": "form-MaryAngelaEaton",
+      "firstName": "Mary Angela",
       "lastName": "Eaton",
-      "email": "anonymous",
+      "email": "Aeaton1380@gmail.com",
       "mobile": "(662) 415-4717",
       "states": [
         "MS"
       ],
       "personalNPI": "1255044269",
-      "payers": [],
+      "payers": [
+        "Aetna",
+        "BCBS",
+        "Cigna",
+        "Humana",
+        "Medicaid",
+        "Medicare",
+        "TRICARE",
+        "UHC"
+      ],
       "availability": "Weekdays PM;Weekends (as needed);Weekdays AM",
-      "inNetworkConfirmed": false,
-      "lastUpdated": "2025-11-07T21:33:04Z",
+      "inNetworkConfirmed": true,
+      "lastUpdated": "2025-11-07T21:36:02Z",
       "otherPayers": [
-        "Yes"
+        "Ambetter",
+        "Golden Rule",
+        "Molina",
+        "Partnership HealthPlan of California"
       ]
-    },
-    {
-      "id": "form-Regina\"Gina\"DiBello",
-      "firstName": "Regina \"Gina\"",
-      "lastName": "DiBello",
-      "email": "anonymous",
-      "mobile": "(727) 219-5268",
-      "states": [
-        "FL"
-      ],
-      "personalNPI": "1467828962",
-      "payers": [],
-      "availability": "Weekdays AM;Weekdays PM;Weekends (as needed)",
-      "inNetworkConfirmed": false,
-      "lastUpdated": "2025-11-07T21:33:04Z",
-      "otherPayers": [
-        "Very impressed with everybody! Loved Leann's story",
-        "and intelligent!",
-        "compassionate",
-        "she is very genuine"
-      ]
-    },
-    {
-      "id": "form-JulianeJohnson",
-      "firstName": "Juliane",
-      "lastName": "Johnson",
-      "email": "anonymous",
-      "mobile": "(229) 942-7996",
-      "states": [
-        "GA"
-      ],
-      "personalNPI": "1114338761",
-      "payers": [],
-      "availability": "Weekdays PM;Weekends (as needed)",
-      "inNetworkConfirmed": false,
-      "lastUpdated": "2025-11-07T21:33:04Z",
-      "otherPayers": [
-        "Is this available if I only have an NP license in GA?"
-      ]
-    },
-    {
-      "id": "form-KimberlySprouse",
-      "firstName": "Kimberly",
-      "lastName": "Sprouse",
-      "email": "anonymous",
-      "mobile": "(662) 574-1099",
-      "states": [
-        "AL",
-        "MS",
-        "VA"
-      ],
-      "personalNPI": "1922549773",
-      "payers": [],
-      "availability": "Weekdays AM",
-      "inNetworkConfirmed": false,
-      "lastUpdated": "2025-11-07T21:33:04Z"
     },
     {
       "id": "form-DominiquePinilla",
       "firstName": "Dominique",
       "lastName": "Pinilla",
-      "email": "anonymous",
+      "email": "dominique.pinilla@gmail.com",
       "mobile": "(423) 943-0856",
       "states": [
         "AL",
@@ -345,122 +121,50 @@
         "WV"
       ],
       "personalNPI": "1124103965",
-      "payers": [],
-      "availability": "Weekdays PM;Weekends (as needed)",
-      "inNetworkConfirmed": false,
-      "lastUpdated": "2025-11-07T21:33:04Z"
-    },
-    {
-      "id": "form-BrendaSchell",
-      "firstName": "Brenda",
-      "lastName": "Schell",
-      "email": "anonymous",
-      "mobile": "(330) 770-5083",
-      "states": [
-        "OH"
+      "payers": [
+        "Aetna",
+        "BCBS",
+        "Cigna",
+        "Humana",
+        "Medicaid",
+        "Medicare",
+        "TRICARE",
+        "UHC"
       ],
-      "personalNPI": "1639565062",
-      "payers": [],
-      "availability": "Weekends (as needed);Weekdays PM",
-      "inNetworkConfirmed": false,
-      "lastUpdated": "2025-11-07T21:33:04Z",
+      "availability": "Weekdays PM;Weekends (as needed)",
+      "inNetworkConfirmed": true,
+      "lastUpdated": "2025-11-07T21:36:02Z",
       "otherPayers": [
-        "I am willing to obtain additional NP license in states of need.  I do have a compact RN license which may expedite the NP in compact states"
+        "Molina"
       ]
     },
     {
       "id": "form-LisaMoreno",
       "firstName": "Lisa",
       "lastName": "Moreno",
-      "email": "anonymous",
+      "email": "lisamoreno702@yahoo.com",
       "mobile": "(702) 336-8420",
       "states": [
         "CA",
         "NV"
       ],
       "personalNPI": "1194262519",
-      "payers": [],
+      "payers": [
+        "Aetna",
+        "BCBS",
+        "Medicaid",
+        "Medicare",
+        "UHC"
+      ],
       "availability": "Weekends (as needed);Weekdays PM",
-      "inNetworkConfirmed": false,
-      "lastUpdated": "2025-11-07T21:33:04Z"
-    },
-    {
-      "id": "form-ClarissaDavid",
-      "firstName": "Clarissa",
-      "lastName": "David",
-      "email": "anonymous",
-      "mobile": "(310) 938-1191",
-      "states": [
-        "CA"
-      ],
-      "personalNPI": "1447970678",
-      "payers": [],
-      "availability": "Weekdays PM;Weekends (as needed)",
-      "inNetworkConfirmed": false,
-      "lastUpdated": "2025-11-07T21:33:04Z",
-      "otherPayers": [
-        "I am board certified in adult gerontology acute care and my question if I will be assigned to review adult cases only?"
-      ]
-    },
-    {
-      "id": "form-MichelleOsborne",
-      "firstName": "Michelle",
-      "lastName": "Osborne",
-      "email": "anonymous",
-      "mobile": "(270) 314-3668",
-      "states": [
-        "FL",
-        "IL",
-        "KY",
-        "NY",
-        "TX"
-      ],
-      "personalNPI": "1962695593",
-      "payers": [],
-      "availability": "Weekdays PM;Weekends (as needed);Weekdays AM",
-      "inNetworkConfirmed": false,
-      "lastUpdated": "2025-11-07T21:33:04Z"
-    },
-    {
-      "id": "form-RebekahKottkamp",
-      "firstName": "Rebekah",
-      "lastName": "Kottkamp",
-      "email": "anonymous",
-      "mobile": "(574) 339-2209",
-      "states": [
-        "IN"
-      ],
-      "personalNPI": "1881018729",
-      "payers": [],
-      "availability": "Weekdays PM;Weekends (as needed)",
-      "inNetworkConfirmed": false,
-      "lastUpdated": "2025-11-07T21:33:04Z",
-      "otherPayers": [
-        "Yes",
-        "none at this time"
-      ]
-    },
-    {
-      "id": "form-AmyCoggin",
-      "firstName": "Amy",
-      "lastName": "Coggin",
-      "email": "anonymous",
-      "mobile": "(423) 605-9075",
-      "states": [
-        "GA",
-        "TN"
-      ],
-      "personalNPI": "1356749881",
-      "payers": [],
-      "availability": "Weekdays PM;Weekends (as needed)",
-      "inNetworkConfirmed": false,
-      "lastUpdated": "2025-11-07T21:33:04Z"
+      "inNetworkConfirmed": true,
+      "lastUpdated": "2025-11-07T21:36:02Z"
     },
     {
       "id": "form-ShaynaPerkins",
       "firstName": "Shayna",
       "lastName": "Perkins",
-      "email": "anonymous",
+      "email": "sperkinsfnp@gmail.com",
       "mobile": "(251) 422-4033",
       "states": [
         "AL",
@@ -469,171 +173,142 @@
         "VA"
       ],
       "personalNPI": "1699313650",
-      "payers": [],
-      "availability": "Weekdays PM;Weekends (as needed)",
-      "inNetworkConfirmed": false,
-      "lastUpdated": "2025-11-07T21:33:04Z",
-      "otherPayers": [
-        "what is the hourly compensation rate?"
-      ]
-    },
-    {
-      "id": "form-AmberKelly",
-      "firstName": "Amber",
-      "lastName": "Kelly",
-      "email": "anonymous",
-      "mobile": "(803) 236-7428",
-      "states": [
-        "WA"
+      "payers": [
+        "Aetna",
+        "BCBS",
+        "Cigna",
+        "Humana",
+        "Medicaid",
+        "Medicare",
+        "TRICARE",
+        "UHC"
       ],
-      "personalNPI": "1437637048",
-      "payers": [],
-      "availability": "Weekends (as needed)",
-      "inNetworkConfirmed": false,
-      "lastUpdated": "2025-11-07T21:33:04Z",
+      "availability": "Weekdays PM;Weekends (as needed)",
+      "inNetworkConfirmed": true,
+      "lastUpdated": "2025-11-07T21:36:02Z",
       "otherPayers": [
-        "I'm currently only licensed in Washington",
-        "but would be willing to be licensed in Arizona as I will be moving there next year."
+        "Ambetter",
+        "Magnolia Health",
+        "Meridian Choice",
+        "VIVA Health",
+        "Wellcare"
       ]
     },
     {
       "id": "form-OliviaMayBennett",
       "firstName": "Olivia May",
       "lastName": "Bennett",
-      "email": "anonymous",
+      "email": "olivia.bennett2@outlook.com",
       "mobile": "(662) 255-3473",
       "states": [
         "MS",
         "TN"
       ],
       "personalNPI": "1275363145",
-      "payers": [],
-      "availability": "",
-      "inNetworkConfirmed": false,
-      "lastUpdated": "2025-11-07T21:33:04Z",
+      "payers": [
+        "Aetna",
+        "BCBS",
+        "Cigna",
+        "Medicaid",
+        "Medicare",
+        "UHC"
+      ],
+      "availability": "Weekdays PM;Weekends (as needed)",
+      "inNetworkConfirmed": true,
+      "lastUpdated": "2025-11-07T21:36:02Z",
       "otherPayers": [
-        "Yes"
+        "Medicare Advantage"
       ]
     },
     {
-      "id": "form-AnaidraReese",
-      "firstName": "Anaidra",
-      "lastName": "Reese",
-      "email": "anonymous",
-      "mobile": "(334) 559-4312",
+      "id": "form-AnnetteAsbury",
+      "firstName": "Annette",
+      "lastName": "Asbury",
+      "email": "aasburyfnp@gmail.com",
+      "mobile": "(702) 241-9969",
       "states": [
-        "AK",
-        "AL",
-        "AR",
-        "AZ",
-        "CA",
+        "NV"
+      ],
+      "personalNPI": "1659812212",
+      "payers": [
+        "Aetna",
+        "BCBS",
+        "Cigna",
+        "Medicare",
+        "UHC"
+      ],
+      "availability": "Weekdays AM;Weekdays PM;Weekends (as needed)",
+      "inNetworkConfirmed": true,
+      "lastUpdated": "2025-11-07T21:36:02Z",
+      "otherPayers": [
+        "First Health Network",
+        "HPN commercial",
+        "Teacher's Health Trust",
+        "Triwest",
+        "UMR"
+      ]
+    },
+    {
+      "id": "form-NoraNokes",
+      "firstName": "Nora",
+      "lastName": "Nokes",
+      "email": "kathy.nokes@gmail.com",
+      "mobile": "(620) 257-8789",
+      "states": [
         "CO",
         "CT",
-        "DE",
-        "FL",
-        "GA",
-        "HI",
         "IA",
-        "ID",
-        "IL",
-        "IN",
         "KS",
-        "KY",
-        "LA",
-        "MA",
-        "MD",
-        "ME",
-        "MI",
-        "MN",
-        "MS",
-        "MT",
-        "NC",
-        "ND",
-        "NE",
-        "NH",
-        "NJ",
         "NM",
         "NV",
-        "NY",
-        "OH",
-        "OK",
         "OR",
-        "PA",
-        "RI",
-        "SC",
-        "SD",
-        "TN",
-        "TX",
-        "UT",
-        "VA",
         "VT",
-        "WA",
-        "WI",
-        "WV"
+        "WA"
       ],
-      "personalNPI": "1104476423",
-      "payers": [],
-      "availability": "Weekdays AM;Weekends (as needed)",
-      "inNetworkConfirmed": false,
-      "lastUpdated": "2025-11-07T21:33:04Z"
-    },
-    {
-      "id": "form-SherricaSmith",
-      "firstName": "Sherrica",
-      "lastName": "Smith",
-      "email": "anonymous",
-      "mobile": "(662) 719-5656",
-      "states": [
-        "MS"
+      "personalNPI": "1497369318",
+      "payers": [
+        "Aetna",
+        "BCBS",
+        "Cigna",
+        "Humana",
+        "Medicaid",
+        "Medicare",
+        "TRICARE",
+        "UHC"
       ],
-      "personalNPI": "1568814655",
-      "payers": [],
       "availability": "Weekends (as needed);Weekdays PM;Weekdays AM",
-      "inNetworkConfirmed": false,
-      "lastUpdated": "2025-11-07T21:33:04Z",
-      "otherPayers": [
-        "None"
-      ]
+      "inNetworkConfirmed": true,
+      "lastUpdated": "2025-11-07T21:36:02Z"
     },
     {
-      "id": "form-MaryJaneHarris",
-      "firstName": "Mary Jane",
-      "lastName": "Harris",
-      "email": "anonymous",
-      "mobile": "(808) 232-9217",
+      "id": "form-RebeccaScarpa",
+      "firstName": "Rebecca",
+      "lastName": "Scarpa",
+      "email": "scarpa.becky@gmail.com",
+      "mobile": "(775) 291-8125",
       "states": [
-        "HI"
+        "NV"
       ],
-      "personalNPI": "1457824252",
-      "payers": [],
-      "availability": "Weekdays AM",
-      "inNetworkConfirmed": false,
-      "lastUpdated": "2025-11-07T21:33:04Z"
-    },
-    {
-      "id": "form-EmiliePozoulakks",
-      "firstName": "Emilie",
-      "lastName": "Pozoulakks",
-      "email": "anonymous",
-      "mobile": "(240) 285-3682",
-      "states": [
-        "MD"
+      "personalNPI": "1104992171",
+      "payers": [
+        "Aetna",
+        "BCBS",
+        "Cigna",
+        "Humana",
+        "Medicaid",
+        "Medicare",
+        "TRICARE",
+        "UHC"
       ],
-      "personalNPI": "1346727492",
-      "payers": [],
-      "availability": "Weekdays AM;Weekdays PM;Weekends (as needed)",
-      "inNetworkConfirmed": false,
-      "lastUpdated": "2025-11-07T21:33:04Z",
-      "otherPayers": [
-        "Thank you kindly",
-        "Yes"
-      ]
+      "availability": "Weekends (as needed);Weekdays AM;Weekdays PM",
+      "inNetworkConfirmed": true,
+      "lastUpdated": "2025-11-07T21:36:02Z"
     },
     {
       "id": "form-KarenPryor",
       "firstName": "Karen",
       "lastName": "Pryor",
-      "email": "anonymous",
+      "email": "kltpryor@gmail.com",
       "mobile": "(251) 458-8522",
       "states": [
         "AZ",
@@ -649,69 +324,25 @@
         "WA"
       ],
       "personalNPI": "1376709865",
-      "payers": [],
+      "payers": [
+        "Aetna",
+        "BCBS",
+        "Medicaid",
+        "Medicare",
+        "TRICARE"
+      ],
       "availability": "Weekdays AM",
-      "inNetworkConfirmed": false,
-      "lastUpdated": "2025-11-07T21:33:04Z",
+      "inNetworkConfirmed": true,
+      "lastUpdated": "2025-11-07T21:36:02Z",
       "otherPayers": [
-        "Yes"
+        "Tufts MA"
       ]
-    },
-    {
-      "id": "form-CaleyTatrn",
-      "firstName": "Caley",
-      "lastName": "Tatrn",
-      "email": "anonymous",
-      "mobile": "(724) 472-1854",
-      "states": [
-        "PA"
-      ],
-      "personalNPI": "1093290967",
-      "payers": [],
-      "availability": "Weekdays PM;Weekends (as needed)",
-      "inNetworkConfirmed": false,
-      "lastUpdated": "2025-11-07T21:33:04Z"
-    },
-    {
-      "id": "form-AnnetteAsbury",
-      "firstName": "Annette",
-      "lastName": "Asbury",
-      "email": "anonymous",
-      "mobile": "(702) 241-9969",
-      "states": [
-        "NV"
-      ],
-      "personalNPI": "1659812212",
-      "payers": [],
-      "availability": "Weekdays AM;Weekdays PM;Weekends (as needed)",
-      "inNetworkConfirmed": false,
-      "lastUpdated": "2025-11-07T21:33:04Z",
-      "otherPayers": [
-        "How long does the process take to get started?",
-        "Yes"
-      ]
-    },
-    {
-      "id": "form-CatherineCollins",
-      "firstName": "Catherine",
-      "lastName": "Collins",
-      "email": "anonymous",
-      "mobile": "(502) 321-3526",
-      "states": [
-        "AZ",
-        "KY"
-      ],
-      "personalNPI": "1205313988",
-      "payers": [],
-      "availability": "Weekends (as needed);Weekdays PM",
-      "inNetworkConfirmed": false,
-      "lastUpdated": "2025-11-07T21:33:04Z"
     },
     {
       "id": "form-AntiquaSmart",
       "firstName": "Antiqua",
       "lastName": "Smart",
-      "email": "anonymous",
+      "email": "ansmartnp@gmail.com",
       "mobile": "(225) 937-7491",
       "states": [
         "AL",
@@ -725,228 +356,144 @@
         "VA"
       ],
       "personalNPI": "1487837985",
-      "payers": [],
+      "payers": [
+        "Aetna",
+        "BCBS",
+        "Humana",
+        "Medicaid",
+        "Medicare",
+        "UHC"
+      ],
       "availability": "Weekdays PM;Weekends (as needed)",
-      "inNetworkConfirmed": false,
-      "lastUpdated": "2025-11-07T21:33:04Z",
-      "otherPayers": [
-        "I can easily renew my North Carolina APRN license but need a Supervising Physician",
-        "Medical Director from the company. I am working on Arkansas and Minnesota APRN licenses currently. I may have Arizona",
-        "Mississippi",
-        "and Nevada by the end of the year",
-        "beginning of next year. I am very excited to do this role and will need assistance obtaining credentialing with more commercial plans though I am working with a credentialing agency. However",
-        "you may prefer to keep things in-house. Thanks."
-      ]
+      "inNetworkConfirmed": true,
+      "lastUpdated": "2025-11-07T21:36:02Z"
     },
     {
-      "id": "form-NoraNokes",
-      "firstName": "Nora",
-      "lastName": "Nokes",
-      "email": "anonymous",
-      "mobile": "(620) 257-8789",
+      "id": "form-RebekahKottkamp",
+      "firstName": "Rebekah",
+      "lastName": "Kottkamp",
+      "email": "rkottkamp@primarycaresb.com",
+      "mobile": "(574) 339-2209",
       "states": [
-        "CO",
-        "CT",
-        "IA",
-        "KS",
-        "NM",
-        "NV",
-        "OR",
-        "VT",
-        "WA"
+        "IN"
       ],
-      "personalNPI": "1497369318",
-      "payers": [],
-      "availability": "Weekends (as needed);Weekdays PM;Weekdays AM",
-      "inNetworkConfirmed": false,
-      "lastUpdated": "2025-11-07T21:33:04Z",
-      "otherPayers": [
-        "Love the concept of the service being provided to help clinicians have more concise information to care for patients."
-      ]
-    },
-    {
-      "id": "form-LeAnnaMiller",
-      "firstName": "LeAnna",
-      "lastName": "Miller",
-      "email": "anonymous",
-      "mobile": "(906) 395-2907",
-      "states": [
-        "MI"
+      "personalNPI": "1881018729",
+      "payers": [
+        "Aetna",
+        "BCBS",
+        "Cigna",
+        "Medicaid",
+        "Medicare",
+        "UHC"
       ],
-      "personalNPI": "1356898415",
-      "payers": [],
-      "availability": "Weekends (as needed)",
-      "inNetworkConfirmed": false,
-      "lastUpdated": "2025-11-07T21:33:04Z"
-    },
-    {
-      "id": "form-KatrinaGeneral",
-      "firstName": "Katrina",
-      "lastName": "General",
-      "email": "anonymous",
-      "mobile": "(904) 463-1778",
-      "states": [
-        "FL",
-        "GA",
-        "TX",
-        "VA"
-      ],
-      "personalNPI": "1053156141",
-      "payers": [],
       "availability": "Weekdays PM;Weekends (as needed)",
-      "inNetworkConfirmed": false,
-      "lastUpdated": "2025-11-07T21:33:04Z"
+      "inNetworkConfirmed": true,
+      "lastUpdated": "2025-11-07T21:36:02Z"
     },
     {
-      "id": "form-ShanekiaCole",
-      "firstName": "Shanekia",
-      "lastName": "Cole",
-      "email": "anonymous",
-      "mobile": "(832) 969-0969",
+      "id": "form-LeekieshiaGrimsley",
+      "firstName": "Leekieshia",
+      "lastName": "Grimsley",
+      "email": "ldfrankl85@gmail.com",
+      "mobile": "(910) 330-7352",
       "states": [
-        "HI",
-        "TX"
+        "GA"
       ],
-      "personalNPI": "1558419226",
-      "payers": [],
-      "availability": "Weekdays AM",
-      "inNetworkConfirmed": false,
-      "lastUpdated": "2025-11-07T21:33:04Z"
-    },
-    {
-      "id": "form-JessicaMaffett",
-      "firstName": "Jessica",
-      "lastName": "Maffett",
-      "email": "anonymous",
-      "mobile": "(662) 297-4489",
-      "states": [
-        "MS"
+      "personalNPI": "1487235354",
+      "payers": [
+        "Aetna",
+        "BCBS",
+        "Cigna",
+        "Humana",
+        "Medicaid",
+        "Medicare",
+        "TRICARE",
+        "UHC"
       ],
-      "personalNPI": "1366992083",
-      "payers": [],
-      "availability": "Weekdays AM;Weekdays PM",
-      "inNetworkConfirmed": false,
-      "lastUpdated": "2025-11-07T21:33:04Z",
-      "otherPayers": [
-        "Are the hours confirmed for each week or variable?"
-      ]
-    },
-    {
-      "id": "form-JanelleKloch",
-      "firstName": "Janelle",
-      "lastName": "Kloch",
-      "email": "anonymous",
-      "mobile": "(630) 337-4713",
-      "states": [
-        "IL",
-        "TX"
-      ],
-      "personalNPI": "1477006294",
-      "payers": [],
       "availability": "Weekdays AM;Weekends (as needed);Weekdays PM",
-      "inNetworkConfirmed": false,
-      "lastUpdated": "2025-11-07T21:33:04Z"
+      "inNetworkConfirmed": true,
+      "lastUpdated": "2025-11-07T21:36:02Z"
     },
     {
-      "id": "form-LissetteMoody",
-      "firstName": "Lissette",
-      "lastName": "Moody",
-      "email": "anonymous",
-      "mobile": "(321) 578-0676",
+      "id": "form-DavidPreston",
+      "firstName": "David",
+      "lastName": "Preston",
+      "email": "davidprestonarnp@gmail.com",
+      "mobile": "(727) 804-3360",
       "states": [
-        "FL",
-        "VA"
+        "FL"
       ],
-      "personalNPI": "1922379866",
-      "payers": [],
-      "availability": "Weekdays AM",
-      "inNetworkConfirmed": false,
-      "lastUpdated": "2025-11-07T21:33:04Z",
-      "otherPayers": [
-        "Is malpractice insurance provided or required"
-      ]
+      "personalNPI": "1013933787",
+      "payers": [
+        "Aetna",
+        "Cigna",
+        "Medicaid"
+      ],
+      "availability": "Weekdays AM;Weekdays PM;Weekends (as needed)",
+      "inNetworkConfirmed": true,
+      "lastUpdated": "2025-11-07T21:36:02Z"
     },
     {
-      "id": "form-AlexandraJonesStewart",
-      "firstName": "Alexandra",
-      "lastName": "Jones Stewart",
-      "email": "anonymous",
-      "mobile": "(318) 773-8241",
-      "states": [
-        "FL",
-        "KY",
-        "LA",
-        "TX"
-      ],
-      "personalNPI": "1700166717",
-      "payers": [],
-      "availability": "Weekdays AM;Weekdays PM",
-      "inNetworkConfirmed": false,
-      "lastUpdated": "2025-11-07T21:33:04Z",
-      "otherPayers": [
-        "Georgia APRN license application is in process.",
-        "New York and Mississippi",
-        "No additional questions at this time. I also have other APRN license pending approval in Connecticut"
-      ]
-    },
-    {
-      "id": "form-BrittanyDynes",
-      "firstName": "Brittany",
-      "lastName": "Dynes",
-      "email": "anonymous",
-      "mobile": "(937) 564-3816",
-      "states": [
-        "IN",
-        "OH"
-      ],
-      "personalNPI": "1639741697",
-      "payers": [],
-      "availability": "Weekdays AM;Weekends (as needed)",
-      "inNetworkConfirmed": false,
-      "lastUpdated": "2025-11-07T21:33:04Z",
-      "otherPayers": [
-        "Is this company expanding its role",
-        "or has someone left and this position is a replacement? What are you desiring out of an employee to make them successful? What defines success in this role?"
-      ]
-    },
-    {
-      "id": "form-KarenMcDay",
-      "firstName": "Karen",
-      "lastName": "McDay",
-      "email": "anonymous",
-      "mobile": "(601) 606-1047",
+      "id": "form-MargaretSydnettMcNeese",
+      "firstName": "Margaret Sydnett",
+      "lastName": "McNeese",
+      "email": "mam_msm@bellsouth.net",
+      "mobile": "(601) 757-8751",
       "states": [
         "LA",
         "MS"
       ],
-      "personalNPI": "1396496253",
-      "payers": [],
-      "availability": "Weekdays PM;Weekends (as needed)",
-      "inNetworkConfirmed": false,
-      "lastUpdated": "2025-11-07T21:33:04Z",
+      "personalNPI": "1538803325",
+      "payers": [
+        "Aetna",
+        "BCBS",
+        "Cigna",
+        "Humana",
+        "Medicaid",
+        "Medicare",
+        "TRICARE",
+        "UHC"
+      ],
+      "availability": "Weekdays AM;Weekdays PM;Weekends (as needed)",
+      "inNetworkConfirmed": true,
+      "lastUpdated": "2025-11-07T21:36:02Z"
+    },
+    {
+      "id": "form-EmiliePozoulakks",
+      "firstName": "Emilie",
+      "lastName": "Pozoulakks",
+      "email": "Emilie290391@gmail.com",
+      "mobile": "(240) 285-3682",
+      "states": [
+        "MD"
+      ],
+      "personalNPI": "1346727492",
+      "payers": [
+        "Aetna",
+        "BCBS"
+      ],
+      "availability": "Weekdays AM;Weekdays PM;Weekends (as needed)",
+      "inNetworkConfirmed": true,
+      "lastUpdated": "2025-11-07T21:36:02Z",
       "otherPayers": [
-        "I have no questions at this time."
+        "My Medicaids",
+        "and UHC are pending"
       ]
     },
     {
-      "id": "form-CarolineGreen",
-      "firstName": "Caroline",
-      "lastName": "Green",
-      "email": "anonymous",
-      "mobile": "(601) 541-2860",
+      "id": "form-SophiaCabrera",
+      "firstName": "Sophia",
+      "lastName": "Cabrera",
+      "email": "sdcabrera85@gmail.com",
+      "mobile": "(702) 339-2915",
       "states": [
-        "LA",
-        "MS"
+        "NV"
       ],
-      "personalNPI": "1578020822",
+      "personalNPI": "",
       "payers": [],
-      "availability": "Weekdays PM;Weekends (as needed)",
+      "availability": "Weekdays AM;Weekdays PM;Weekends (as needed)",
       "inNetworkConfirmed": false,
-      "lastUpdated": "2025-11-07T21:33:04Z",
-      "otherPayers": [
-        "Is there a Collaborating Physician needed for this position?  If",
-        "so am I responsible for precuring a collaborating physician"
-      ]
+      "lastUpdated": "2025-11-07T21:36:02Z"
     }
   ]
 }
